@@ -1,0 +1,19 @@
+.volume_silder-container {
+  height: "10rem";
+  width: 5px;
+  background-color: bisque;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  /* border: 1px solid red; */
+}
+.olume_slider-cover {
+  height: 100%;
+  width: 2px;
+  background-color: azure;
+}
+.volume_slider-filled {
+  width: 2px;
+  background-color: orangered;
+}

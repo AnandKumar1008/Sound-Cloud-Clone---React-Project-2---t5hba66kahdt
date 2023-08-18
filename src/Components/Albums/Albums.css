@@ -1,0 +1,6 @@
+.sound_cloud-albums_grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+  margin: 1rem;
+}

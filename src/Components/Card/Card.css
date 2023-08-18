@@ -1,0 +1,105 @@
+.sound_cloud-card_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 14rem;
+  width: 11rem;
+  align-items: center;
+}
+.sound_cloud-card_detail {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.sound_cloud-card_detail p {
+  font-size: 0.8rem;
+  text-align: start;
+  font-family: var(--font-a);
+}
+.sound_cloud-card_image {
+  position: relative;
+}
+
+.sound_cloud-card_image img {
+  width: 100%;
+}
+.sound_cloud-card_absolute {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  /* border: 2px solid red; */
+}
+.sound_cloud-card_play_icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 85%;
+  /* border: 2px solid blue; */
+  width: 100%;
+  height: 80%;
+  display: none;
+}
+.sound_cloud-card_like_icons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 20%;
+  display: none;
+}
+
+.sound_cloud-card_content:hover .sound_cloud-card_like_icons {
+  display: flex;
+}
+.sound_cloud-card_content:hover .sound_cloud-card_play_icon {
+  display: flex;
+}
+.sound_cloud-card_three_dot {
+  position: relative;
+}
+.sound_cloud-card_three_dot_list {
+  position: fixed;
+  display: flex;
+  width: 8rem;
+  flex-direction: column;
+  align-items: start;
+  border-radius: 0.25rem;
+  z-index: 1000;
+  border: 1px solid var(--color-btn-border);
+}
+
+.sound_cloud-card_three_dot_list button {
+  background-color: white;
+  border: none;
+  font-family: var(--font-a);
+  padding: 0.5rem 0.5rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--color-choose-bg);
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 0.5rem;
+  border-radius: 0rem;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 300;
+}
+
+.sound_cloud-card_three_dot_list button:hover {
+  background-color: var(--color-choose-bg);
+}

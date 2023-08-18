@@ -1,0 +1,27 @@
+.sound_cloud-app {
+  background-color: var(--color-bg);
+}
+.sound_cloud-routes {
+  width: 82%;
+  margin: 0 auto;
+}
+.sound_cloud-app_audio_player {
+  position: fixed;
+  bottom: 0;
+  z-index: 200;
+  width: 100%;
+  background-color: var(--color-player-bg);
+  /* background-color: #e0e0e0; */
+}
+ul {
+  list-style: none;
+}
+.sound_cloud-login.login_page {
+  top: 0;
+}
+@media screen and (max-width: 900px) {
+  .sound_cloud-routes {
+    width: 100%;
+    overflow: hidden;
+  }
+}

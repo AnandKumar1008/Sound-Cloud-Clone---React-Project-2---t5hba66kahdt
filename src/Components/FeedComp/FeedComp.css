@@ -1,0 +1,33 @@
+.sound_cloud-feed_comp {
+  width: 100%;
+  position: relative;
+  min-height: 100%;
+  padding-top: 3rem;
+  background-color: var(--color-bg);
+}
+.sound_cloud-feed_comp_container {
+  width: 100%;
+  background-color: white;
+  margin: 0rem auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+
+.sound_cloud-feed_omp_left {
+  flex: 3.5;
+  margin: 2rem;
+  font-family: var(--font-a);
+}
+.sound_cloud-feed_omp_left {
+  max-width: 70%;
+}
+.sound_cloud-feed_comp_right {
+  position: relative;
+  flex: 1.5;
+  width: 100%;
+}
+.sound_cloud-feed_comp_margin {
+  margin: 2rem 0;
+}

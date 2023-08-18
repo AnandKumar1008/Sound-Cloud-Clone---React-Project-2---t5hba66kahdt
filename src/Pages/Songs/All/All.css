@@ -1,0 +1,16 @@
+.sound_cloud-songs_all {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.sound_cloud-songs_all_list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2rem;
+}
+.sound_cloud-songs_all_list_item {
+  width: 100%;
+}

@@ -1,0 +1,18 @@
+.sound_cloud-upload_header_nav {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  list-style: none;
+}
+.sound_cloud-upload_header_nav li {
+  padding: 0.7rem 0;
+  font-family: var(--font-a);
+  border-bottom: 2px solid var(--color-btn-text);
+  cursor: pointer;
+}
+.sound_cloud-upload_header_nav li a {
+  color: var(--color-text);
+}
+.sound_cloud-upload_header_nav li:hover {
+  border-bottom: 2px solid var(--color-text);
+}

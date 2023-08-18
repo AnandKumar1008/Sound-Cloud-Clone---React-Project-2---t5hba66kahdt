@@ -1,0 +1,13 @@
+.sound_cloud-search_result {
+  padding-top: 5rem;
+}
+.sound_cloud-search_result_heading {
+  margin: 1rem;
+  font-family: var(--font-a);
+}
+.sound_cloud-search_result_heading h1 {
+  font-weight: 500;
+}
+.sound_cloud-search_result_each_track {
+  margin: 1rem 0;
+}

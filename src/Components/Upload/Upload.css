@@ -1,0 +1,22 @@
+.sound_cloud-upload {
+  width: 100%;
+  padding: 3rem 0;
+  margin: 0 auto;
+  background-color: var(--color-container);
+}
+
+.sound_cloud-upload_header {
+  padding: 1.6rem;
+  background-color: var(--color-upload-header-bg);
+  font-family: var(--font-a);
+}
+.sound_cloud_upload-middle_padding {
+  padding: 0 2rem;
+  min-height: 100vh;
+}
+.sound_cloud-upload_header p button {
+  background-color: var(--color-container);
+  border: 1px solid var(--color-para-text);
+  padding: 0.125rem 0.25rem;
+  font-family: var(--font-a);
+}

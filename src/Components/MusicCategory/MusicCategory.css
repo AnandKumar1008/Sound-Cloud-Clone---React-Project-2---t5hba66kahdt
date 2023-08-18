@@ -1,0 +1,62 @@
+.sound_music-music_category {
+  margin-bottom: 3rem;
+}
+.sound_cloud-music_category_grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+.sound_cloud-music_category_items {
+  height: 14rem;
+}
+.sound_cloud-music_category {
+  margin-bottom: 1rem;
+}
+.sound_cloud-music_category h3 {
+  font-weight: 400;
+  font-family: var(--font-a);
+}
+.sound_cloud-music_category_items img {
+  /* background-color: aqua; */
+  height: 12rem;
+  width: 100%;
+  border: 1px solid var(--color-nav-hover-text);
+}
+.sound_cloud-music_category_items h4 {
+  text-align: start;
+  font-family: var(--font-a);
+  color: var(--color-text);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+.sound_cloud-music_category_items p {
+  color: var(--color-para-text);
+  font-family: var(--font-a);
+}
+/* MEdia  */
+@media screen and (max-width: 1500px) {
+  .sound_cloud-music_category_grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media screen and (max-width: 1300px) {
+  .sound_cloud-music_category_grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 1100px) {
+  .sound_cloud-music_category_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .sound_cloud-music_category_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 400px) {
+  .sound_cloud-music_category_grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

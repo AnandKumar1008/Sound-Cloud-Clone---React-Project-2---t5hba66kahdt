@@ -1,0 +1,53 @@
+.sound_cloud-library_likes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: var(--font-a);
+}
+.sound_cloud-library_likes span {
+  opacity: 0.2;
+  font-size: 15rem;
+}
+.sound_cloud-likes_grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  height: 10rem;
+  margin: 2rem 1rem;
+}
+/* Media  */
+@media screen and (max-width: 1500px) {
+  .sound_cloud-likes_grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media screen and (max-width: 1300px) {
+  .sound_cloud-likes_grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .sound_cloud-likes_footer {
+    display: none;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .sound_cloud-likes_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .sound_cloud-likes_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 400px) {
+  .sound_cloud-likes_grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .sound_cloud-likes_grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

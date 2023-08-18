@@ -1,0 +1,358 @@
+.sound_cloud-nav {
+  width: 100%;
+  background-color: var(--color-nav-bg);
+  position: fixed;
+  z-index: 200;
+}
+.active {
+  background-color: var(--color-nav-selected);
+}
+.sound_cloud-nav_links {
+  width: 82%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-a);
+}
+
+.sound_cloud-nav_links a {
+  color: var(--color-nav-hover-text);
+  text-decoration: none;
+  padding: 1rem;
+  white-space: nowrap;
+}
+.sound_cloud-nav_links_left {
+  flex: 3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.sound_cloud-nav_links_left a {
+  border-right: 2px solid var(--color-nav-selected);
+}
+.sound_cloud-nav_links_sound_icon {
+  flex: 1;
+}
+.sound_cloud-nav_links_sound_icon a {
+  font-size: 2.6rem;
+  padding: 0 0.8rem;
+  background-color: var(--color-nav-selected);
+}
+.sound_cloud-nav_links_home_feed_library {
+  flex: 6;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.sound_cloud-nav_links_home_feed_library > * {
+  flex: 2;
+}
+
+.sound_cloud-nav_links_search {
+  flex: 4;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.sound_cloud-nav_links_search div {
+  flex: 3;
+}
+.sound_cloud-nav_links_search input a {
+  flex: 1;
+}
+.sound_cloud-nav_links_last {
+  flex: 3;
+  display: flex;
+  flex-direction: row;
+}
+.sound_cloud-nav_link_artist_upload {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.sound_cloud-nav_link_artist_upload > * {
+  flex: 1;
+}
+.sound_cloud-nav_links_user {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  /* border: 2px solid red; */
+  /* position: relative; */
+}
+
+.sound_cloud-nav_links_user > * {
+  flex: 1;
+}
+.sound_cloud-nav_links_user li {
+  list-style: none;
+  font-size: 1.6rem;
+  padding: 0.5rem 0.75rem;
+  color: var(--color-nav-hover-text);
+}
+.sound_cloud-nav_links_first_list {
+  position: relative;
+}
+
+.sound_cloud-nav_links_option {
+  position: absolute;
+  top: 100%;
+}
+.sound_cloud-nav_links_user_menu {
+  border: 1px solid var(--color-nav-selected);
+  background-color: var(--color-menu-bg);
+}
+.sound_cloud-nav_links_user_menu ul {
+  list-style: none;
+}
+.sound_cloud-nav_links_user_menu ul li a {
+  font-size: 0.9rem;
+  color: var(--color-nav-selected);
+  margin: 0;
+  font-family: var(--font-a);
+  font-weight: 400;
+}
+.sound_cloud-nav_links_user_menu ul li {
+  padding: 0 0.5rem;
+}
+.sound_cloud-nav_links_icons {
+  flex: 3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.sound_cloud-nav_links_search div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.sound_cloud-nav_links_search div input {
+  padding: 0.45rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  font-family: var(--font-a);
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+.sound_cloud-nav_links_search div button {
+  padding: 0.4rem;
+  border: none;
+  background-color: var(--color-btn-text);
+  cursor: pointer;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+.sound_cloud-nav_links_user a {
+  padding: 0;
+  font-size: 1.5rem;
+}
+s .sound_cloud-nav_links_icons div {
+  color: var(--color-nav-hover-text);
+  padding: 0;
+  font-size: 1.5rem;
+}
+.sound_cloud-nav_three_dot {
+  position: relative;
+}
+.sound_cloud-nav_three_dot_ul {
+  /* position: fixed; */
+  /* right: 9%;
+  top: 3.4rem; */
+  background-color: white;
+  border: 1px solid var(--color-para-text-light);
+}
+.sound_cloud-nav_three_dot_absolute {
+  position: absolute;
+  top: 109%;
+  right: 0%;
+}
+.sound_cloud-nav_three_dot_ul li {
+  padding: 0;
+  font-size: 0.9rem;
+  font-family: var(--font-a);
+  font-weight: 500;
+  color: black;
+  padding: 0.5rem 0.5rem;
+  white-space: nowrap;
+}
+.sound_cloud-nav_link_first_list_image {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.sound_cloud-nav_link_first_list_image img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+.sound_cloud-nav_sign_up {
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.sound_cloud-nav_sign_up button {
+  white-space: nowrap;
+  padding: 0.5rem;
+  background-color: var(--color-nav-bg);
+  border: none;
+  color: var(--color-nav-hover-text);
+  font-family: var(--font-a);
+  font-weight: 400;
+  font-size: 1rem;
+  border: none;
+}
+.sound_cloud-sound_create_account_button button {
+  padding: 0.5rem 1rem;
+  border: none;
+  color: var(--color-btn-text);
+  font-family: var(--font-a);
+  cursor: pointer;
+}
+.sound_cloud-nav_sign_up button:nth-of-type(1) {
+  border: 1px solid var(--color-btn-text);
+}
+.sound_cloud-nav_sign_up button:nth-of-type(2) {
+  background-color: var(--color-orgred);
+  color: white;
+}
+.sound_cloud-nav_notification {
+  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  font-family: var(--font-a);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sound_cloud-nav_notification_absolute {
+  position: absolute;
+  background-color: white;
+  top: 115%;
+
+  /* width: 100%; */
+}
+.sound_cloud-nav_message {
+  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-a);
+  align-items: center;
+  justify-content: center;
+}
+.sound_cloud-nav_message_absolute,
+.sound_cloud-nav_notification_absolute {
+  top: 115%;
+  /* right: 50%; */
+  /* right: 0; */
+  width: 15rem;
+  position: absolute;
+  background-color: white;
+  cursor: auto;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.sound_cloud-nav_message_absolute p,
+.sound_cloud-nav_notification_absolute p {
+  font-family: var(--font-a);
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--color-para-text-light);
+  white-space: nowrap;
+  text-align: center;
+}
+.sound_cloud-nav_message_absolute p:nth-of-type(1),
+.sound_cloud-nav_notification_absolute p:nth-of-type(1) {
+  /* margin: 0 1rem; */
+  padding: 0.5rem;
+  text-align: start;
+  font-weight: bold;
+  border-bottom: 1px solid var(--color-para-text-light);
+}
+.sound_cloud-nav_message_absolute p:nth-of-type(2),
+.sound_cloud-nav_notification_absolute p:nth-of-type(2) {
+  margin: 1rem;
+}
+.sound_cloud-nav_message_absolute p:nth-of-type(3),
+.sound_cloud-nav_notification_absolute p:nth-of-type(3) {
+  color: black;
+  /* padding: 0 1rem; */
+  margin: 0 1rem;
+  padding: 0.5rem;
+  border-top: 1px solid var(--color-para-text-light);
+}
+.sound_cloud-nav_long_menu {
+  display: none;
+}
+.sound_cloud-category_tracks span:nth-of-type(2) {
+  color: orangered;
+  border-bottom: 1px solid orangered;
+  font-family: var(--font-a);
+  display: none;
+}
+
+/*  */
+@media screen and (max-width: 1200px) {
+  .sound_cloud-nav_try_next_pro {
+    display: none;
+  }
+  .sound_cloud-nav_artist {
+    display: none;
+  }
+}
+@media screen and (max-width: 900px) {
+  .sound_cloud-nav_notification,
+  .sound_cloud-nav_message {
+    display: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  .sound_cloud-nav_notification,
+  .sound_cloud-nav_message {
+    display: none;
+  }
+  .sound_cloud-nav_links {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .sound_cloud-nav_links_home_feed_library {
+    display: none;
+  }
+  .sound_cloud-nav_long_menu {
+    display: block;
+  }
+  .sound_cloud-nav_link_artist_upload {
+    display: none;
+  }
+  .sound_cloud-nav_links_user {
+    display: none;
+  }
+  .sound_cloud-category_tracks span:nth-of-type(2) {
+    color: orangered;
+    border-bottom: 1px solid orangered;
+    font-family: var(--font-a);
+    display: inline;
+  }
+}
+@media screen and (max-width: 300px) {
+  .sound_cloud-nav_three_dot {
+    display: none;
+  }
+  .sound_cloud-nav_links_last {
+    display: none;
+  }
+  .sound_cloud-nav_links_search {
+    /* width: 0%; */
+    margin: 0 1rem 0 0;
+  }
+}

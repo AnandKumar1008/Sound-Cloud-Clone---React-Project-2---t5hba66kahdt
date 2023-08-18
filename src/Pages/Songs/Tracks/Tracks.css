@@ -1,0 +1,5 @@
+.sound_cloud-tracks {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

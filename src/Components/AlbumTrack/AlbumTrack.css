@@ -1,0 +1,23 @@
+.sound_cloud-album_track_item {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  font-family: var(--font-a);
+
+  padding: 0.5rem 0;
+}
+.sound_cloud-album_track_item :hover {
+  cursor: pointer;
+  background-color: var(--color-choose-bg);
+}
+.sound_cloud-album_tarck_image {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  /* gap: 0.5rem; */
+}
+.sound_cloud-album_tarck_image img {
+  height: 1rem;
+  width: 1rem;
+}

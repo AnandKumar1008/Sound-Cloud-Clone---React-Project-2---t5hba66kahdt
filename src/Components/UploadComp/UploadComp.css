@@ -1,0 +1,147 @@
+.sound_cloud-upload_comp_cover {
+  min-height: 100vh;
+  width: 70%;
+  margin: 0 auto;
+}
+.sound_cloud-upload_middle_area {
+  /* margin-top: 5rem; */
+  width: 100%;
+  margin: 5rem auto;
+  border: 1px solid rgba(136, 136, 136, 0.1);
+}
+.sound_cloud-upload_free_uploads {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(136, 136, 136, 0.1);
+}
+
+.sound_cloud-upload_comp_try_next_pro {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.sound_cloud-upload_comp_try_next_pro button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--color-btn-text);
+  color: var(--color-orgred);
+  font-family: var(--font-a);
+  border-radius: 2px;
+  border: 1px solid var(--color-orgred);
+  font-size: 1.1rem;
+}
+.sound_cloud-upload_comp_padding {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.sound_cloud-upload_comp_padding > * {
+  flex: 1;
+}
+.sound_cloud-upload_comp_padding span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.sound_cloud-upload_fill {
+  height: 2px;
+  background-color: orangered;
+}
+.sound_cloud-sound_drag_drop {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 8rem auto;
+  /* border: 1px solid var(); */
+  border: 1px solid rgba(136, 136, 136, 0.1);
+}
+.sound_cloud-sound_drag_drop h3 {
+  text-align: start;
+  font-family: var(--font-b);
+  color: var(--color-para-text);
+  font-weight: 400;
+  margin: 1rem 0;
+  font-size: 1.6rem;
+}
+.sound_cloud-upload_comp_upload_btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-b);
+  width: 80%;
+  margin: 0 auto;
+}
+
+.sound_cloud-upload_comp_upload_btn button {
+  width: 100%;
+  background-color: var(--color-choose-bg);
+  border: none;
+  padding: 0.7rem 1rem;
+  color: var(--color-para-text);
+  font-family: var(--font-b);
+  text-align: center;
+}
+.sound_cloud-upload_check {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: start;
+  font-family: var(--font-b);
+  font-size: 0.8rem;
+  margin: 0.5rem;
+}
+.sound_cloud-upload_privacy {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  width: 100%;
+  margin: 0.5rem;
+}
+.sound_cloud-upload_comp_last {
+  margin: 4rem 0;
+}
+.sound_cloud-upload_comp_last p {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-align: start;
+  font-family: var(--font-b);
+}
+.sound_cloud-basic_info {
+  margin: 1rem;
+  font-family: var(--font-a);
+}
+.sound_cloud-basic_info input {
+  padding: 0.25rem;
+  width: 15rem;
+}
+.sound_cloud-basic_info_button {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.sound_cloud-basic_info_button button {
+  background-color: orangered;
+  border: none;
+  padding: 0.35rem 0.5rem;
+  cursor: pointer;
+  font-family: var(--font-a);
+  color: var(--color-btn-text);
+  border-radius: 0.125rem;
+}
+.sound_cloud-sound_drag_go_to_track {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  font-family: var(--font-b);
+}

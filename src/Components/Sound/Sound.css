@@ -1,0 +1,408 @@
+.sound_cloud-sound {
+  width: 100%;
+  font-family: var(--font-a);
+  overflow: visible;
+}
+.sound_cloud-sound_container {
+  width: 100%;
+  margin: 0 auto;
+  border-top: 4px solid var(--color-orgred);
+}
+.sound_cloud-sound_head {
+  background-color: var(--color-container);
+}
+.sound_cloud-sound_header_image {
+  border: 1px solid red;
+  position: relative;
+  width: 100%;
+  /* background-image: url("../Images/head.png"); */
+  height: 28rem;
+}
+.sound_cloud-sound_header_image img {
+  width: 100%;
+  height: 100%;
+}
+.sound_cloud-sound_header_cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.sound_cloud-sound_create_account_cloud {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+}
+.sound_cloud-sound_icon {
+  font-size: 3rem;
+  color: var(--color-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sound_cloud-sound_icon_left {
+  display: flex;
+  color: var(--color-container);
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+.sound_cloud-sound_create_account {
+}
+.sound_cloud-sound_create_account_button {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+}
+.sound_cloud-sound_create_account_button button {
+  padding: 0.5rem 1rem;
+  border: none;
+  color: var(--color-btn-text);
+  font-family: var(--font-a);
+  cursor: pointer;
+}
+.sound_cloud-sound_create_account_button button:nth-of-type(1) {
+  background-color: black;
+  border: 1px solid var(--color-btn-text);
+}
+.sound_cloud-sound_create_account_button button:nth-of-type(2) {
+  background-color: var(--color-orgred);
+}
+.sound_cloud-sound_create_account_button button:nth-of-type(3) {
+  background-color: black;
+  padding: 0;
+}
+.sound_cloud-sound_header_middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-container);
+  max-width: 50%;
+  margin: 4rem auto;
+}
+.sound_cloud-sound_header_middle h1 {
+  font-weight: 500;
+}
+.sound_cloud-sound_header_middle p {
+  text-align: center;
+  margin: 2rem;
+  font-size: 1.1rem;
+  /* letter-spacing: 1px; */
+  line-height: 1.5rem;
+}
+.sound_cloud-sound_header_middle button {
+  background-color: var(--color-orgred);
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  color: var(--color-container);
+  font-family: var(--font-a);
+  border-radius: 0.25rem;
+}
+.sound_cloud-sound_search {
+  width: 100%;
+}
+.sound_cloud-sound_option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+  margin: 3rem auto;
+  gap: 1rem;
+}
+.sound_cloud-sound_option div {
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+}
+.sound_cloud-sound_option div button {
+  background-color: var(--color-bg);
+  color: black;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.sound_cloud-sound_option input {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  background-color: var(--color-bg);
+  outline: none;
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-family: var(--font-a);
+}
+.sound_cloud-sound_option button {
+  white-space: nowrap;
+  padding: 0.75rem 1rem;
+  border: none;
+  background-color: var(--color-orgred);
+  color: var(--color-container);
+  font-family: var(--font-a);
+  border-radius: 0.25rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: 350;
+}
+.sound_cloud-sound_h2 {
+  text-align: center;
+  font-weight: 400;
+  font-family: var(--font-a);
+}
+.sound_cloud-sound_grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  padding: 2rem;
+  gap: 1rem;
+  overflow: hidden;
+}
+.sound_cloud-sound_grid div {
+  max-width: 100%;
+}
+.sound_cloud-sound_grid div img {
+  max-width: 100%;
+  height: auto;
+}
+.sound_cloud-sound_grid div p {
+  text-align: start;
+  overflow: auto;
+}
+.sound_cloud-sound_explore {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.sound_cloud-sound_explore button {
+  padding: 0.75rem 1rem;
+  border: none;
+  background-color: var(--color-orgred);
+  color: var(--color-btn-text);
+  border-radius: 0.25rem;
+  font-size: 1.1rem;
+  margin: 1rem 0 4rem 0;
+}
+.sound_cloud-sound_bottom_image {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  gap: 1rem;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 4rem;
+}
+.sound_cloud-sound_bottom_img {
+  flex: 2;
+  max-width: 100%;
+}
+.sound_cloud-sound_bottom_img img {
+  max-width: 100%;
+}
+.sound_cloud-sound_never_stop {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  /* text-align: center; */
+}
+.sound_cloud-sound_never_stop h2 {
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+.sound_cloud-sound_never_stop > * {
+  margin: 0.5rem 0;
+}
+.sound_cloud-sound_never_stop_line {
+  width: 5rem;
+  height: 4px;
+  background-color: rgb(231, 82, 13);
+}
+.sound_cloud-sound_never_stop p {
+  line-height: 2rem;
+  font-size: 1.6rem;
+  font-weight: 350;
+
+  /* text-align: center; */
+}
+.sound_clone-sound_bottom_button {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.sound_clone-sound_bottom_button button {
+  background-color: var(--color-btn-store);
+  width: 9rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.sound_clone-sound_bottom_button button span:nth-of-type(1) {
+  font-size: 1.3rem;
+}
+.sound_clone-sound_bottom_button button span {
+  font-family: var(--font-a);
+
+  display: flex;
+
+  flex-direction: column;
+
+  border: none;
+  /* justify-content: center; */
+
+  color: var(--color-btn-text);
+  text-align: center;
+  padding: 0.25rem;
+}
+.sound_clone-sound_bottom_button button span p {
+  /* text-align: center; */
+  white-space: nowrap;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  text-align: start;
+}
+.sound_clone-sound_bottom_button button span h4 {
+  text-align: start;
+}
+.sound_cloud-sound_last_section {
+  width: 100%;
+  background-color: var(--color-container);
+}
+.sound_cloud-sound_last_section img {
+  width: 100%;
+}
+.sound_cloud-sound_last_section_heading h1 {
+  /* background-color: ; */
+  text-align: center;
+  margin-top: 4rem;
+  font-weight: 400;
+}
+.sound_cloud-sound_last_section_heading p {
+  text-align: center;
+  margin: 2rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.sound_cloud-sound_last_section_button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.sound_cloud-sound_last_section_button button {
+  background-color: var(--color-orgred);
+  border: none;
+  padding: 0.75rem 2rem;
+  text-align: center;
+  color: var(--color-btn-text);
+  font-family: var(--font-a);
+  border-radius: 0.25rem;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  font-weight: 300;
+  cursor: pointer;
+}
+.sound_cloud-sound_last_section_already {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.sound_cloud-sound_last_section_already button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-btn-border);
+  font-family: var(--font-a);
+  background-color: var(--color-btn-text);
+  font-size: 1.1rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+.sound_cloud-sound_last_section_already p {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+.sound_cloud-footer {
+  padding: 1rem;
+  margin: 5rem 0;
+}
+.sound_cloud-footer div p {
+  font-family: var(--font-a);
+}
+.sound_cloud-footer_a {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.sound_cloud-footer_a a {
+  text-decoration: none;
+  color: var(--color-footer-text);
+  font-family: var(--font-a);
+}
+.sound_cloud-footer_a a:hover {
+  color: var(--color-footer-hover);
+}
+.sound_cloud-sound_header_middle button {
+  cursor: pointer;
+}
+@media screen and (max-width: 1400px) {
+  .sound_cloud-sound_grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .sound_cloud-sound_grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 900px) {
+  .sound_cloud-sound_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .sound_cloud-sound_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sound_cloud-sound_option {
+    flex-direction: column;
+  }
+  .sound_cloud-sound_header_image {
+    height: 80vh;
+  }
+}
+@media screen and (max-width: 400px) {
+  .sound_cloud-sound_grid {
+    display: flex;
+    /* grid-template-columns: repeat(1, 1fr); */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .sound_cloud-sound_option {
+    flex-direction: column;
+  }
+  .sound_cloud-sound_header_image {
+    height: 100vh;
+  }
+}
+@media screen and (max-width: 400px) {
+  .sound_cloud-sound_header_image {
+    height: 120vh;
+  }
+}

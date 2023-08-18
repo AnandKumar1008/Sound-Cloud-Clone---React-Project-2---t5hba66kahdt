@@ -1,0 +1,15 @@
+.sound_cloud-your_tracks {
+  font-family: var(--font-a);
+}
+.sound_cloud-your_tracks_middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: var(--font-a);
+}
+.sound_cloud-your_tracks_middle div {
+  font-size: 15rem;
+  opacity: 0.2;
+}

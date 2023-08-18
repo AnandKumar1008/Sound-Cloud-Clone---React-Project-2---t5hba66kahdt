@@ -1,0 +1,72 @@
+import * as React from "react";
+import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import LinearScaleIcon from "@mui/icons-material/LinearScale";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import { Link } from "react-router-dom";
+const options = [
+  { path: "", name: "All" },
+  { path: "populartracks", name: "Popular Tracks" },
+  { path: "tracks", name: "Tracks" },
+  { path: "playlists", name: "PlayLists" },
+  { path: "albums", name: "ALBUMS" },
+  { path: "reposts", name: "REPOSTS" },
+];
+
+const ITEM_HEIGHT = 48;
+
+const CategoryMenu = () => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  return (
+    <div>
+      <IconButton
+        aria-label="more"
+        id="long-button"
+        aria-controls={open ? "long-menu" : undefined}
+        aria-expanded={open ? "true" : undefined}
+        aria-haspopup="true"
+        onClick={handleClick}
+      >
+        <MoreHorizIcon />
+      </IconButton>
+      <Menu
+        id="long-menu"
+        MenuListProps={{
+          "aria-labelledby": "long-button",
+        }}
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        PaperProps={{
+          style: {
+            maxHeight: ITEM_HEIGHT * 10.5,
+            width: "20ch",
+            backgroundColor: "black",
+            color: "white",
+          },
+        }}
+      >
+        {options.map((option) => (
+          <MenuItem
+            key={option}
+            selected={option === "Pyxis"}
+            onClick={handleClose}
+          >
+            <Link to={option.path}>{option.name}</Link>
+          </MenuItem>
+        ))}
+      </Menu>
+    </div>
+  );
+};
+export default CategoryMenu;

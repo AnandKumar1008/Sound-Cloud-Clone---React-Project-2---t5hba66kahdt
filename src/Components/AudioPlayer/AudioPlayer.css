@@ -1,0 +1,278 @@
+.sound_cloud-audio_player {
+  display: flex;
+  flex-direction: row;
+  height: 3rem;
+  width: 83%;
+  margin: 0 auto;
+}
+.sound_cloud-audio_player button {
+  border: none;
+}
+.sound_cloud-audio_player_audio {
+  width: 90%;
+  color: red;
+  display: none;
+}
+.sound_cloud-audio_player_left {
+  flex: 3.5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.sound_cloud-audio_player_progress {
+  background-color: black;
+  height: 1px;
+  width: 100%;
+  cursor: pointer;
+}
+.sound_cloud-audio_player_progress_fill {
+  background-color: orangered;
+  height: 2px;
+}
+.sound_cloud-audio_player_speaker {
+  flex: 0.8;
+  background-color: var(--color-player-bg);
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.sound_cloud-audio_player_speaker_icon {
+  cursor: pointer;
+}
+.sound_cloud-audio_player_icons {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 1rem;
+}
+.sound_cloud-audio_player_time_progress {
+  flex: 4;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.sound_cloud-audio_player_cover {
+  width: 100%;
+  cursor: pointer;
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 1rem;
+}
+.sound_cloud-audio_player_right {
+  flex: 1.5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.sound_cloud-audio_player_right_images {
+  flex: 3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+.sound_cloud-audio_player_icons {
+  flex: 1;
+}
+.sound_cloud-audio_player_right_images img {
+  max-height: 2rem;
+  max-width: auto;
+  border-radius: 0.25rem;
+}
+.sound_cloud-audio_player_right_images div {
+  padding: 0 0.5rem;
+  font-family: var(--font-a);
+}
+.sound_cloud-audio_player_right_images div p {
+  font-size: 0.8rem;
+  white-space: nowrap;
+  max-width: 8rem;
+  overflow: hidden;
+}
+/* Current List */
+.sound_cloud-current_list_items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.sound_cloud-current_list_items_title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: start;
+  cursor: pointer;
+}
+
+.sound_cloud-current_list_images img {
+  width: 2rem;
+  border-radius: 3px;
+}
+.sound_cloud-current_list {
+  position: fixed;
+  bottom: 3rem;
+  border: 1px solid var(--color-player-bg);
+  border-bottom: none;
+  width: 30%;
+  right: 9%;
+  max-height: 85vh;
+  overflow: scroll;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+.sound_cloud-current_list_container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: var(--font-a);
+  padding: 0.5rem;
+}
+.sound_cloud-list_container_heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.sound_cloud-list_container_heading span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.sound_cloud-list_container_heading span button {
+  padding: 0.25rem;
+  background-color: white;
+  font-family: var(--font-a);
+  border: 2px solid var(--color-player-bg);
+}
+.sound_cloud-current_list_icon {
+  position: absolute;
+  top: 0.25rem;
+  display: none;
+}
+
+.sound_cloud-current_list_images {
+  position: relative;
+}
+.sound_cloud-current_list_last_icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  display: none;
+}
+.sound_cloud-current_list_items:hover .sound_cloud-current_list_last_icons {
+  display: block;
+}
+.sound_cloud-current_list_items:hover .sound_cloud-current_list_icon {
+  display: block;
+}
+.sound_cloud-current_list_three_dot {
+  position: relative;
+}
+.sound_cloud-current_list_dot {
+  position: absolute;
+  z-index: 1000;
+  right: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.sound_cloud-current_list_dot button {
+  border: none;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: white;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 0.25rem;
+  border: 1px solid var(--color-player-bg);
+  cursor: pointer;
+}
+
+/* CSS For speaker part */
+
+.sound_cloud-audio_player_speaker_hover {
+  position: absolute;
+  bottom: 100%;
+  width: 2rem;
+  border: 1px solid var(--color-para-text);
+  height: 6rem;
+  left: 38%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  display: none;
+}
+
+.sound_cloud-audio_player_rotate_spaker {
+  transform: rotate(-90deg);
+  transform-origin: center center;
+  /* transform-origin; */
+  width: 5rem; /* Adjust the width as needed */
+  height: 2px;
+  color: orangered;
+}
+.sound_cloud-audio_player_rotate_spaker {
+  -webkit-appearance: none;
+  appearance: none;
+
+  background: #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+.sound_cloud-audio_player_rotate_spaker::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0.6rem;
+  height: 0.6rem;
+  background: orangered; /* Color of the slider thumb */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.sound_cloud-audio_player_rotate_spaker::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0.6rem;
+  height: 0.6rem;
+  background: orangered; /* Color of the slider thumb */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.sound_cloud-audio_player_speaker:hover
+  .sound_cloud-audio_player_speaker_hover {
+  display: flex;
+}
+/* Responsive Media queries */
+@media screen and (max-width: 900px) {
+  .sound_cloud-audio_player {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .sound_cloud-audio_player_left {
+    display: none;
+    padding: 0 1rem;
+  }
+}
