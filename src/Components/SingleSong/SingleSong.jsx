@@ -12,6 +12,7 @@ import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
 import { BsFillPauseCircleFill, BsFillPlayCircleFill } from "react-icons/bs";
 import { AiFillHeart } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const SingleSong = () => {
   const { userPhoto } = useContext(MyContext);
@@ -50,7 +51,37 @@ const SingleSong = () => {
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
-
+  const handleShare = () => {
+    // Implement the sharing functionality here
+    if (navigator.share) {
+      navigator
+        .share({
+          title: currentSongDetail?.title,
+          text: currentSongDetail?.mood,
+          url: currentSongDetail?.audio_url,
+        })
+        .catch((error) => console.error("Error sharing:", error));
+    } else {
+      console.log("Sharing not supported on this browser.");
+    }
+  };
+  const handleCopy = () => {
+    navigator.clipboard
+      .writeText(currentSongDetail.audio_url)
+      .then(() => {
+        toast(`Link Copied to ClipBorad`, {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      })
+      .catch((error) => console.error("Error copying:", error));
+  };
   return (
     <div className="sound_cloud-single_song">
       <div className="sound_cloud-single_song_bg">
@@ -184,19 +215,19 @@ const SingleSong = () => {
               <LuRepeat2 /> Repost
             </button>
           )}
-          <button title="Share">
+          <button title="Share" onClick={handleShare}>
             {" "}
             <FaShareSquare />
             share
           </button>
-          <button title="Copy More">
+          <button title="Copy More" onClick={handleCopy}>
             <LuLink2 style={{ fontSize: "1rem" }} />
             Copy More
           </button>
-          <button title="More">
+          {/* <button title="More">
             <MoreHorizRoundedIcon />
             More
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

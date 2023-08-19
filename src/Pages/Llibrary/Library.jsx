@@ -12,7 +12,7 @@ const Library = () => {
 
   if (!login) {
     setLoginPage(true);
-    return <Login />;
+    return <></>;
   }
   return (
     <div className="sound_cloud-library">

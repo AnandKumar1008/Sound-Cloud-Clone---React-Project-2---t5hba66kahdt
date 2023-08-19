@@ -4,8 +4,7 @@ import { MyContext } from "../../../MyContext";
 import "./All.css";
 const url = "https://academics.newtonschool.co/api/v1/music/song";
 const All = () => {
-  const { allSongs, setAllSongs, setSongPlay, songPlay } =
-    useContext(MyContext);
+  const { songPlay } = useContext(MyContext);
 
   return (
     <>

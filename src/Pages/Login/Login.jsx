@@ -33,9 +33,14 @@ const Login = () => {
   const handleLoginPage = () => {
     setLoginPage(false);
     setIsPlaying(false);
-    if (!login) navigate("/home");
-    // if (location.pathname === "/feed" || location.pathname === "/library")
-    //   navigate("/home");
+    if (!login)
+      if (
+        location.pathname.includes("/feed") ||
+        location.pathname.includes("/library")
+      ) {
+        navigate("/home");
+        console.log("running");
+      }
   };
   const handleGoogle = () => {
     signInWithPopup(auth, provider)
@@ -62,10 +67,10 @@ const Login = () => {
             data
           )
           .then((response) => {
-            console.log("Data posted successfully:", response);
+            // console.log("Data posted successfully:", response);
           })
           .catch((error) => {
-            console.error("Error posting data:", error);
+            // console.error("Error posting data:", error);
           });
         console.log(result);
         setLogin(true);
