@@ -161,11 +161,13 @@ const SingleSong = () => {
       </div>
       <div className="sound_cloud-single_song_detail">
         <div className="sound_cloud-single_song_detail_img">
-          <img
-            style={{ height: "2rem", width: "2rem" }}
-            src={userPhoto}
-            alt=""
-          />
+          {login && (
+            <img
+              style={{ height: "2rem", width: "2rem" }}
+              src={userPhoto}
+              alt=""
+            />
+          )}
         </div>
         <div className="sound_cloud-single_song_like">
           {liked.some((like) => like._id === currentSongDetail._id) ? (
