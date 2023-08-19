@@ -28,6 +28,12 @@
   gap: 1rem;
   font-family: var(--font-a);
 }
+.sound_cloud-track_audio_section_play div {
+  flex: 1;
+}
+.sound_cloud-track_audio_section_play span {
+  flex: 4;
+}
 .sound_cloud-track_audio_section_line_space {
   display: flex;
   flex-direction: column;

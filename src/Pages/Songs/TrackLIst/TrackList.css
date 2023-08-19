@@ -1,3 +1,6 @@
 .sound_cloud-trackList {
   width: 100%;
 }
+.sound_cloud-trackList_margin {
+  margin: 1rem 0;
+}

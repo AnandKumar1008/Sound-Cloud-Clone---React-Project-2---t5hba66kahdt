@@ -210,7 +210,7 @@ const Nav = () => {
             }
           >
             {login ? (
-              <NavLink to="/artist" className="sound_cloud-nav_artist">
+              <NavLink to="/song" className="sound_cloud-nav_artist">
                 For Artists
               </NavLink>
             ) : (

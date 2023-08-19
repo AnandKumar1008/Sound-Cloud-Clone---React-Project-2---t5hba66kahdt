@@ -11,8 +11,8 @@ const options = [
   { path: "populartracks", name: "Popular Tracks" },
   { path: "tracks", name: "Tracks" },
   { path: "playlists", name: "PlayLists" },
-  { path: "albums", name: "ALBUMS" },
-  { path: "reposts", name: "REPOSTS" },
+  { path: "albums", name: "Albums" },
+  { path: "reposts", name: "Reposts" },
 ];
 
 const ITEM_HEIGHT = 48;
@@ -49,9 +49,10 @@ const CategoryMenu = () => {
         onClose={handleClose}
         PaperProps={{
           style: {
-            maxHeight: ITEM_HEIGHT * 10.5,
+            maxHeight: "100vh",
             width: "20ch",
-            backgroundColor: "black",
+
+            backgroundColor: "#333333",
             color: "white",
           },
         }}
@@ -62,7 +63,12 @@ const CategoryMenu = () => {
             selected={option === "Pyxis"}
             onClick={handleClose}
           >
-            <Link to={option.path}>{option.name}</Link>
+            <Link
+              to={option.path}
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              {option.name}
+            </Link>
           </MenuItem>
         ))}
       </Menu>

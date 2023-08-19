@@ -15,7 +15,7 @@ const TrackList = () => {
       onClick={() => setSongPlay(trackList)}
     >
       {trackList?.map((item, i, self) => (
-        <div key={item._id}>
+        <div key={item._id} className="sound_cloud-trackList_margin">
           <Track key={item._id} song={item} index={i} self={self} />
         </div>
       ))}

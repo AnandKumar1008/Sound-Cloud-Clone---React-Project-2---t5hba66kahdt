@@ -208,31 +208,34 @@ const Track = ({ song, index, self }) => {
       </div>
       <div className="sound_cloud-track_audio_section">
         <div className="sound_cloud-track_audio_section_play">
-          {songId === song?._id && isPlaying ? (
-            <BsFillPauseCircleFill
-              style={{
-                fontSize: "3rem",
-                color: "orangered",
-                cursor: "pointer",
-              }}
-              onClick={() => setIsPlaying(false)}
-            />
-          ) : (
-            <BsFillPlayCircleFill
-              style={{
-                fontSize: "3rem",
-                color: "orangered",
-                cursor: "pointer",
-              }}
-              onClick={() => {
-                setSongId(song?._id);
-                setCurrentSongIndex(index);
-                setSongPlay([...self]);
-                setIsPlaying(true);
-              }}
-            />
-          )}
-          <span>
+          <div>
+            {songId === song?._id && isPlaying ? (
+              <BsFillPauseCircleFill
+                style={{
+                  fontSize: "3rem",
+                  color: "orangered",
+                  cursor: "pointer",
+                }}
+                onClick={() => setIsPlaying(false)}
+              />
+            ) : (
+              <BsFillPlayCircleFill
+                style={{
+                  fontSize: "3rem",
+                  color: "orangered",
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  setSongId(song?._id);
+                  setCurrentSongIndex(index);
+                  setSongPlay([...self]);
+                  setIsPlaying(true);
+                }}
+              />
+            )}
+          </div>
+
+          <span className="sound_cloud-track_song_heading">
             <h6>{song?.mood}</h6>
             <p>{song?.title}</p>
           </span>
