@@ -54,6 +54,8 @@ const CreateAccount = () => {
 
       const responseData = await response.json();
       console.log(responseData);
+      setCreateAccount(false);
+
       // Handle the response data here
     } catch (error) {
       console.error("Error:", error);

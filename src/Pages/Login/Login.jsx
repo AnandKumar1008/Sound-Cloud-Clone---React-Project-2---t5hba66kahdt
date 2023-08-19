@@ -21,6 +21,7 @@ const Login = () => {
     setLogin,
     setIsPlaying,
   } = useContext(MyContext);
+  const [error, setError] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
   const [userDetail, setUserDetail] = useState({ email: "", password: "" });
@@ -113,10 +114,12 @@ const Login = () => {
       } else {
         console.error("Login was not successful:", responseData);
         // Handle unsuccessful login here
+        setError("Login was not successful! You can using Google");
       }
     } catch (error) {
       console.error("Error:", error);
       // Handle errors here
+      setError("Something Went Wrong! Try login with google");
     }
   };
   return (
@@ -155,21 +158,24 @@ const Login = () => {
             <span>or</span>
             <span></span>
           </div>
+          {error && <p style={{ color: "red" }}>{error}</p>}
           <input
             type="email"
             placeholder="Your Email Adress"
             value={userDetail.email}
-            onChange={(e) =>
-              setUserDetail({ ...userDetail, email: e.target.value })
-            }
+            onChange={(e) => {
+              setUserDetail({ ...userDetail, email: e.target.value });
+              setError("");
+            }}
           />
           <input
             type="password"
             placeholder="Enter Your Password"
             value={userDetail.password}
-            onChange={(e) =>
-              setUserDetail({ ...userDetail, password: e.target.value })
-            }
+            onChange={(e) => {
+              setUserDetail({ ...userDetail, password: e.target.value });
+              setError("");
+            }}
           />
           <button
             className="sound_cloud-login_button_continue"
