@@ -1,5 +1,7 @@
 .sound_cloud-search_result {
   padding-top: 5rem;
+  min-height: 100vh;
+  background-color: white;
 }
 .sound_cloud-search_result_heading {
   margin: 1rem;

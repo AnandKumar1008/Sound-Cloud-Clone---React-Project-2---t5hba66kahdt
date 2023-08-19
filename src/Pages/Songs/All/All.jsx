@@ -11,7 +11,7 @@ const All = () => {
     <>
       <div className="sound_cloud-songs_all">
         <div className="sound_cloud-songs_all_list">
-          {allSongs?.map((item, i, self) => (
+          {songPlay?.map((item, i, self) => (
             <div key={item?._id} className="sound_cloud-songs_all_list_item">
               <Track key={item?._id} song={item} index={i} self={self} />
             </div>

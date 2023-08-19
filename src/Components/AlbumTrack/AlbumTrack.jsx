@@ -42,8 +42,6 @@ const AlbumTrack = ({ album }) => {
     const getAlbumSong = async () => {
       const albumUrl = "https://academics.newtonschool.co/api/v1/music/album/";
 
-      // console.log(albumUrl);
-      // console.log(currentId);
       const headers = {
         projectId: "yji0muf36wd4",
       };
@@ -54,9 +52,6 @@ const AlbumTrack = ({ album }) => {
         });
         const data = response.data;
         setAlbumSong(data.data.songs || []);
-        //   setSongPlay(data.data.songs || []);
-        //   setCurrentSongIndex(0);
-        //   setIsPlaying(true);
 
         console.log(data);
       } catch (error) {

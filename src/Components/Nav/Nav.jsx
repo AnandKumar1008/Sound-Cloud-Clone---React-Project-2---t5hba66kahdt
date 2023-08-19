@@ -122,6 +122,7 @@ const Nav = () => {
     userPhoto,
     login,
     userName,
+    setCreateAccount,
   } = useContext(MyContext);
   const navigate = useNavigate();
   const handleSearch = async () => {
@@ -146,9 +147,9 @@ const Nav = () => {
         // if (threeDot)
         setThreeDot(false);
       }
-      if (notificationRef && !notificationRef.current.contains(e.target))
+      if (notificationRef && !notificationRef.current?.contains(e.target))
         setNotification(false);
-      if (messageRef && !messageRef.current.contains(e.target))
+      if (messageRef && !messageRef.current?.contains(e.target))
         setMessage(false);
     };
     // document.addEventListener('click')
@@ -221,7 +222,12 @@ const Nav = () => {
                   onClick={() => setLoginPage(true)}
                 >
                   <button style={{ cursor: "pointer" }}>Sign In</button>
-                  <button style={{ cursor: "pointer" }}>Create Account</button>
+                  <button
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setCreateAccount(true)}
+                  >
+                    Create Account
+                  </button>
                 </div>
               </>
             )}

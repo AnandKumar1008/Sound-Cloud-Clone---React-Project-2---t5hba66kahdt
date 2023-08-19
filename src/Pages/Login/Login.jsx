@@ -33,8 +33,9 @@ const Login = () => {
   const handleLoginPage = () => {
     setLoginPage(false);
     setIsPlaying(false);
-    if (location.pathname === "/feed" || location.pathname === "/library")
-      navigate("/home");
+    if (!login) navigate("/home");
+    // if (location.pathname === "/feed" || location.pathname === "/library")
+    //   navigate("/home");
   };
   const handleGoogle = () => {
     signInWithPopup(auth, provider)

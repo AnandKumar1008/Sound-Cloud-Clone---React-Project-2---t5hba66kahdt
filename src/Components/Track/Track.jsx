@@ -23,7 +23,7 @@ export const More = ({ item }) => {
   const dispatch = useDispatch();
   const reposted = useSelector((state) => state.reposts.reposts);
   const menuRef = useRef();
-  const { setSongPlay } = useContext(MyContext);
+  const { setSongPlay, setLoginPage, songPlay, login } = useContext(MyContext);
   const handleShare = () => {
     // Implement the sharing functionality here
     if (navigator.share) {
@@ -66,6 +66,7 @@ export const More = ({ item }) => {
           style={{ color: "orangered" }}
           onClick={(e) => {
             e.stopPropagation();
+
             dispatch({ type: "REMOVE_REPOST", payload: item });
           }}
         >
@@ -75,6 +76,10 @@ export const More = ({ item }) => {
         <button
           onClick={(e) => {
             e.stopPropagation();
+            if (!login) {
+              setLoginPage(true);
+              return;
+            }
             dispatch({ type: "REPOST", payload: item });
 
             toast(`${item?.title} 'reposted to your Feed`, {
@@ -102,6 +107,8 @@ export const More = ({ item }) => {
 
       <button
         onClick={() => {
+          const idx = songPlay.findIndex((song) => song._id == item._id);
+          if (idx >= 0) return;
           toast(`Song Added to NextUp`, {
             position: "top-right",
             autoClose: 1000,

@@ -15,7 +15,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: start;
-  /* gap: 0.5rem; */
+}
+.sound_cloud-track_image img {
+  max-width: 100%;
+  height: auto;
 }
 .sound_cloud-album_tarck_image img {
   height: 1rem;
