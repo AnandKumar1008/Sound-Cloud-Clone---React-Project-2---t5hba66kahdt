@@ -9,6 +9,7 @@ import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../../firebase";
 import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 const Login = () => {
   const {
     loginPage,
@@ -39,13 +40,32 @@ const Login = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         setUserName(result.user.displayName);
+        const userName = result.user.displayName;
+        const userPhoto = result.user.photoURL;
         localStorage.setItem(
           "sound_cloud_google",
           JSON.stringify({
-            userName: result.user.displayName,
-            userPhoto: result.user.photoURL,
+            userName,
+            userPhoto,
           })
         );
+
+        const data = {
+          userName,
+          userPhoto,
+        };
+
+        axios
+          .post(
+            "https://soundcloudclone-85e36-default-rtdb.firebaseio.com/data.json",
+            data
+          )
+          .then((response) => {
+            console.log("Data posted successfully:", response);
+          })
+          .catch((error) => {
+            console.error("Error posting data:", error);
+          });
         console.log(result);
         setLogin(true);
         // setLogin(true);

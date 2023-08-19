@@ -44,6 +44,7 @@ const OneSong = ({ item, i }) => {
     isPlaying,
     setSongId,
   } = useContext(MyContext);
+  const clickRef = useRef();
   const [dot, setDot] = useState(false);
   const reposted = useSelector((state) => state.reposts.reposts);
   const liked = useSelector((state) => state.likes.likes);
@@ -71,6 +72,18 @@ const OneSong = ({ item, i }) => {
       console.log("Sharing not supported on this browser.");
     }
   };
+  useEffect(() => {
+    const handleOutSideClick = (e) => {
+      if (clickRef && !clickRef.current?.contains(e.target)) {
+        setDot(false);
+        console.log("hare code reuns");
+      }
+    };
+    document.addEventListener("click", handleOutSideClick);
+    return () => {
+      document.removeEventListener("click", handleOutSideClick);
+    };
+  }, []);
   return (
     <div
       key={item._id}
@@ -167,6 +180,7 @@ const OneSong = ({ item, i }) => {
             e.stopPropagation();
             setDot((p) => !p);
           }}
+          ref={clickRef}
         >
           <MoreHorizIcon style={{ fontSize: "1rem" }} />
           {dot && (
@@ -251,8 +265,7 @@ const CurrentList = ({ setShowList, currentSong }) => {
     songPlay,
     setSongPlay,
     setCurrentSongIndex,
-    songId,
-    setIsPlaying,
+
     currentSongIndex,
     isPlaying,
   } = useContext(MyContext);
@@ -290,7 +303,7 @@ const CurrentList = ({ setShowList, currentSong }) => {
       </div>
       {songPlay.map((item, i) => (
         <div key={item._id}>
-          <OneSong item={item} i={i} />
+          <OneSong key={item._id} item={item} i={i} />
         </div>
       ))}
     </div>

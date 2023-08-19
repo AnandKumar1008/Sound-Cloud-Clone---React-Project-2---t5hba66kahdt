@@ -38,8 +38,6 @@ const CreateAccount = () => {
     setLoginPage(false);
     setIsPlaying(false);
     setCreateAccount(false);
-    if (location.pathname === "/feed" || location.pathname === "/library")
-      navigate("/home");
   };
   const handleSignUp = async () => {
     const url = "https://academics.newtonschool.co/api/v1/user/signup";

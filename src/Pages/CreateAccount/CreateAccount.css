@@ -1,4 +1,4 @@
-/* .sound_cloud-login {
+.sound_cloud-login {
   position: fixed;
   top: -200%;
   left: 0;
@@ -14,6 +14,7 @@
 }
 .sound_cloud-login_container {
   width: 30%;
+  width: 30rem;
   /* border: 2px solid red; */
   background-color: white;
   border: 2px solid var(--color-choose-bg);
@@ -95,4 +96,7 @@
   font-size: 0.7rem;
   line-height: 1rem;
   text-align: start;
-} */
+}
+/* Media Queries */
+@media screen and (max-width: 1000px) {
+}
