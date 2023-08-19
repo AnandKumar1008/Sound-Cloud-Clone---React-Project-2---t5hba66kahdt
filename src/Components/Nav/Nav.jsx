@@ -274,7 +274,12 @@ const Nav = () => {
                       {/* <div className="sound_cloud-nav_notification_middle"> */}
                       <p>No Notification</p>
                       {/* </div> */}
-                      <p>View all notification</p>
+                      <p
+                        style={{ cursor: "pointer" }}
+                        onClick={() => navigate("/notification")}
+                      >
+                        View all notification
+                      </p>
                     </div>
                   )}
                 </li>
@@ -290,7 +295,12 @@ const Nav = () => {
                       {/* <div className="sound_cloud-nav_message_middle"> */}
                       <p>No Messages</p>
                       {/* </div> */}
-                      <p>View all messages</p>
+                      <p
+                        style={{ cursor: "pointer" }}
+                        onClick={() => navigate("/message")}
+                      >
+                        View all messages
+                      </p>
                     </div>
                   )}
                 </li>

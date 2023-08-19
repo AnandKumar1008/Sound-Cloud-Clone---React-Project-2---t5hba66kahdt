@@ -29,6 +29,8 @@ import TrackList from "./Pages/Songs/TrackLIst/TrackList";
 import Tracks from "./Pages/Songs/Tracks/Tracks";
 import TryNextPro from "./Pages/TryNextPro/TryNextPro";
 import SearchResult from "./cover/SearchResult/SearchResult";
+import Notification from "./Components/Notification/Notification";
+import Messages from "./Components/Messages/Messages";
 
 const audiourl =
   "https://newton-project-resume-backend.s3.amazonaws.com/audio/64cf907d47ae38c3e33a189a.mp3";
@@ -86,6 +88,8 @@ const App = () => {
           </Route>
           <Route path="/search" element={<SearchResult />} />
           <Route path="/track" element={<SingleSong />} />
+          <Route path="/notification" element={<Notification />} />
+          <Route path="/message" element={<Messages />} />
         </Routes>
       </div>
 

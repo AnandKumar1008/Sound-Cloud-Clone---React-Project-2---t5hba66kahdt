@@ -28,7 +28,7 @@ const LongMenu = () => {
     { path: "/nextpro", name: "Try Next Pro" },
     { path: "/song", name: "For Artist" },
     { path: "/upload", name: "Upload" },
-    { path: "/Notification", name: "notification" },
+    { path: "/notification", name: "notification" },
     { path: "/message", name: "Message" },
     { path: "/", name: login ? "Sign Out" : "Sign In" },
   ];

@@ -1,0 +1,20 @@
+.sound_cloud-notification {
+  width: 100%;
+  padding: 3rem 0;
+  background-color: white;
+  font-family: var(--font-a);
+  min-height: 100vh;
+}
+.sound_cloud-notification_heading {
+  padding: 2rem;
+}
+.sound_cloud-notification_heading h2 {
+  margin-bottom: 3rem;
+}
+.sound_cloud-notification_middle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}

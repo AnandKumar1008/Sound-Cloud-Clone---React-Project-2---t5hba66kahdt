@@ -133,3 +133,35 @@
   padding: 0.25rem 0;
   font-size: 1.2rem;
 }
+@media screen and (max-width: 1000px) {
+  .sound_cloud-try_next_pro_bottom_text {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .sound-cloud-try_next_pro_middle {
+    flex-direction: column;
+  }
+  .sound_cloud-try_next_pro_middle_next {
+    width: 90%;
+  }
+  .sound_cloud-try_next_pro_middle {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .sound_cloud-try_next_pro_bottom_text {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .sound-cloud-try_next_pro_middle {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 300px) {
+  .sound_cloud-try_next_pro_middle_next {
+    width: 100%;
+  }
+  .sound_cloud-try_next_pro_middle {
+    width: 100%;
+  }
+}
