@@ -7,7 +7,7 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCP-yCSt1bnND9kN2cmfK2zaYNnn_Z",
+  apiKey: "AIzaSyCP-yCSt1bnND9kN2cmfK2zaYNnn_ZzaiQ",
   authDomain: "soundcloudclone-85e36.firebaseapp.com",
   projectId: "soundcloudclone-85e36",
   storageBucket: "soundcloudclone-85e36.appspot.com",
