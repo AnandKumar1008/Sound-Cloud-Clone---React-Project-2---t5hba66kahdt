@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./RightSide.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { AiTwotoneCalendar } from "react-icons/ai";
+import { MyContext } from "../../MyContext";
 const RightSide = () => {
   const recent = useSelector((state) => state.playlists.playlists);
   const navigate = useNavigate();
+  const { setSongPlay, setIsPlaying, setCurrentSongIndex } =
+    useContext(MyContext);
   return (
     <div className="sound_cloud-right_side">
       <div
@@ -19,8 +22,17 @@ const RightSide = () => {
         </p>
         <p>View All</p>
       </div>
-      {recent.map((item) => (
-        <div key={item._id} className="sound_cloud-right_side_recent">
+      {recent.slice(0, 10).map((item, i, self) => (
+        <div
+          key={item._id}
+          className="sound_cloud-right_side_recent"
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            setSongPlay([...self]);
+            setCurrentSongIndex(i);
+            setIsPlaying(true);
+          }}
+        >
           <div className="sound_cloud-right_side_recent_image">
             <img src={item?.thumbnail} alt="" />
           </div>

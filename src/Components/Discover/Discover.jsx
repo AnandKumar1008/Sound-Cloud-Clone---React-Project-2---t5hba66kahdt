@@ -13,13 +13,11 @@ const url = `https://academics.newtonschool.co/api/v1/music/song`;
 
 const MusicList = ({ musicTitle, description, musicItem = [] }) => {
   const {
-    songPlay,
     setSongPlay,
     currentSongIndex,
     setCurrentSongIndex,
     isPlaying,
     setIsPlaying,
-    songId,
     setSongId,
     albumId,
     setAlbumId,

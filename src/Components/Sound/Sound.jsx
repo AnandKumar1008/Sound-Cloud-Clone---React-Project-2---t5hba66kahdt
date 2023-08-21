@@ -43,7 +43,6 @@ let brr = [];
 const Sound = () => {
   const [search, setSearch] = useState("");
   const {
-    loginPage,
     setLoginPage,
     setSongPlay,
     setIsPlaying,

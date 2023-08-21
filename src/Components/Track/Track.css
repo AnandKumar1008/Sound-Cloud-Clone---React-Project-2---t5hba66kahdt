@@ -110,6 +110,12 @@
 .sound_cloud-track_duration span {
   font-family: var(--font-a);
 }
+.sound_cloud-track_song_heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
 /* Media queries Adding */
 @media screen and (max-width: 600px) {
   .sound_cloud-track_image {

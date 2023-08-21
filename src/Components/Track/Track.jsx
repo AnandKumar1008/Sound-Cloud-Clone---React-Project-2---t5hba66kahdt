@@ -242,8 +242,23 @@ const Track = ({ song, index, self }) => {
             )}
           </div>
 
-          <span className="sound_cloud-track_song_heading">
-            <h6>{song?.mood}</h6>
+          <span className="sound_cloud-track_song_heading" style={{}}>
+            <h6
+              style={{
+                backgroundColor: `rgb(${Math.floor(
+                  Math.random() * 256
+                )},${Math.floor(Math.random() * 256)},${Math.floor(
+                  Math.random() * 256
+                )})`,
+                borderRadius: "1rem",
+                padding: "0.5rem",
+                maxWidth: "6rem",
+                textAlign: "center",
+                color: "white",
+              }}
+            >
+              {song?.mood}
+            </h6>
             <p>{song?.title}</p>
           </span>
         </div>
