@@ -1,16 +1,14 @@
-import React, { useContext, useState } from "react";
-import img1 from "../Images/bg1.jpg";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./Category.css";
-import Albums from "../Albums/Albums";
 import { MyContext } from "../../MyContext";
+import img1 from "../Images/bg1.jpg";
+import "./Category.css";
 import CategoryMenu from "./CategoryMenu";
 const style = {
   color: "orangered",
   borderBottom: "2px solid orangered",
 };
 const Category = () => {
-  // const [active, setActive] = useState("all");
   const location = useLocation();
   const { songPlay, currentSongIndex, active, setActive } =
     useContext(MyContext);

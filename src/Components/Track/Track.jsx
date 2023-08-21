@@ -1,21 +1,19 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-// import { arr } from "../SampleAlbum";
-import { audio } from "../Audios";
 
+import { AiFillHeart } from "react-icons/ai";
+import { BiRepost, BiSolidPlaylist } from "react-icons/bi";
 import {
   BsFillPauseCircleFill,
   BsFillPlayCircleFill,
   BsThreeDots,
 } from "react-icons/bs";
-import "./TrackCard.css";
-import "./Track.css";
-import { LuLink2, LuRepeat2 } from "react-icons/lu";
-import { AiFillHeart } from "react-icons/ai";
 import { FaRegShareSquare, FaShareSquare } from "react-icons/fa";
-import { MyContext } from "../../MyContext";
-import { useDispatch, useSelector } from "react-redux";
+import { LuLink2, LuRepeat2 } from "react-icons/lu";
 import { MdReportGmailerrorred } from "react-icons/md";
-import { BiRepost, BiSolidPlaylist } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
+import { MyContext } from "../../MyContext";
+import "./Track.css";
+import "./TrackCard.css";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -146,12 +144,8 @@ export const More = ({ item }) => {
 const Track = ({ song, index, self }) => {
   const {
     played,
-    setPlayed,
-    currentSongDetail,
-    setCurrentSongDetail,
-    currentSongIndex,
+
     setCurrentSongIndex,
-    allSongs,
     isPlaying,
     setSongPlay,
     setIsPlaying,

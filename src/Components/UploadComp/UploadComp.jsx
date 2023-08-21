@@ -1,10 +1,8 @@
 import React, { useRef, useState } from "react";
-import "./UploadComp.css";
-import { Footer } from "../Sound/Sound";
-import { BiChevronDown } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
+import { Footer } from "../Sound/Sound";
+import "./UploadComp.css";
 const BasicInfo = ({ inp, setInp }) => {
-  // const [title,setTitle]=useState("");
   const dispatch = useDispatch();
   return (
     <div className="sound_cloud-basic_info">
@@ -44,7 +42,6 @@ const UploadComp = () => {
       setInp({ title: "", audioUrl });
       console.log(audioUrl);
     }
-    // setInp(file);
   };
   return (
     <div className="sound_cloud-upload_comp_cover">

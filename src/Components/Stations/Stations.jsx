@@ -1,6 +1,5 @@
 import React from "react";
 import MusicCaterogy from "../MusicCategory/MusicCategory";
-// import { arr } from "../SampleAlbum";
 import { RiBaseStationLine } from "react-icons/ri";
 import { Footer } from "../Sound/Sound";
 const arr = [];

@@ -1,12 +1,10 @@
-import React, { useContext, useEffect } from "react";
-import RightSide from "../RightSide/RightSide";
-import "./FeedComp.css";
+import React from "react";
 import { useSelector } from "react-redux";
+import RightSide from "../RightSide/RightSide";
 import Track from "../Track/Track";
-import { MyContext } from "../../MyContext";
+import "./FeedComp.css";
 const FeedComp = () => {
   const reposted = useSelector((state) => state.reposts.reposts);
-  const { setSongPlay } = useContext(MyContext);
   return (
     <div className="sound_cloud-feed_comp">
       <div className="sound_cloud-feed_comp_container">

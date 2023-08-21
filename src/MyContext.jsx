@@ -22,6 +22,7 @@ const MyProvider = ({ children }) => {
   const [active, setActive] = useState("all");
   const [hover, setHover] = useState("overview");
   const [createAccount, setCreateAccount] = useState(false);
+  // const [search, setSearch] = useState("");
   const [currentDuration, setCurrentDuration] = useState(0);
   return (
     <MyContext.Provider
@@ -67,6 +68,8 @@ const MyProvider = ({ children }) => {
         setCurrentDuration,
         createAccount,
         setCreateAccount,
+        search,
+        setSearch,
       }}
     >
       {children}

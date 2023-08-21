@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-// import { arr } from "../SampleAlbum";
 
 import { BsFillPauseCircleFill, BsFillPlayCircleFill } from "react-icons/bs";
 import "./AlbumTrack.css";
-// import "./Track.css";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { MyContext } from "../../MyContext";
@@ -11,33 +9,17 @@ import "../Track/TrackCard.css";
 const AlbumTrack = ({ album }) => {
   const {
     played,
-    setPlayed,
-    currentSongDetail,
-    setCurrentSongDetail,
-    currentSongIndex,
+
     setCurrentSongIndex,
-    allSongs,
     isPlaying,
     setSongPlay,
     setIsPlaying,
-    songId,
-    setSongId,
-    audioRef,
     currentAlbum,
     setCurrentAlbum,
-    duration,
   } = useContext(MyContext);
 
-  const [more, setMore] = useState(false);
-  const clickRef = useRef();
-  const liked = useSelector((state) => state.albums.albums);
-  const repost = useSelector((state) => state.reposts.reposts);
-  const dispatch = useDispatch();
   const [albumSong, setAlbumSong] = useState([]);
-  const handleClick = (e) => {
-    e.stopPropagation();
-    setMore((p) => !p);
-  };
+
   useEffect(() => {
     const getAlbumSong = async () => {
       const albumUrl = "https://academics.newtonschool.co/api/v1/music/album/";
@@ -87,7 +69,6 @@ const AlbumTrack = ({ album }) => {
               onClick={() => {
                 setCurrentAlbum(album);
                 setCurrentSongIndex(0);
-                // console.log(index);
                 setSongPlay(albumSong || []);
                 setIsPlaying(true);
               }}
@@ -131,55 +112,6 @@ const AlbumTrack = ({ album }) => {
             </div>
           </div>
         ))}
-        {/* <div
-          className="sound_cloud-track_audio_section_buttons"
-          onClick={(e) => e.stopPropagation()}
-        >
-          {liked.some((like) => like._id === album._id) ? (
-            <button
-              style={{ color: "orangered" }}
-              onClick={() => dispatch({ type: "REMOVE_ALBUM", payload: album })}
-            >
-              <AiFillHeart /> Liked
-            </button>
-          ) : (
-            <button
-              onClick={() => dispatch({ type: "ADD_ALBUM", payload: album })}
-            >
-              <AiFillHeart /> Like
-            </button>
-          )}
-          {repost.some((item) => item._id === album._id) ? (
-            <button
-              style={{ color: "orangered" }}
-              onClick={(e) => {
-                e.stopPropagation();
-                dispatch({ type: "REMOVE_REPOST", payload: allAlbums[0] });
-              }}
-            >
-              <LuRepeat2 />
-              Reposted
-            </button>
-          ) : (
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                dispatch({ type: "REPOST", payload: allAlbums[0] });
-              }}
-            >
-              <LuRepeat2 /> Repost
-            </button>
-          )}
-          <button>
-            <FaRegShareSquare /> Share
-          </button>
-          <button onClick={handleClick}>
-            <BsThreeDots /> More
-            <div className="sound_cloud-album_track">
-              {more && <More key={album?._id} item={album} setMore={setMore} />}
-            </div>
-          </button>
-        </div> */}
       </div>
     </div>
   );

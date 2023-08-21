@@ -1,22 +1,21 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import "./Nav.css";
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
-import { RiSoundcloudLine } from "react-icons/ri";
-import { RiNotification4Fill } from "react-icons/ri";
-import { BsFillEnvelopeFill, BsPeopleFill } from "react-icons/bs";
-import { BsThreeDots } from "react-icons/bs";
-import { CgProfile } from "react-icons/cg";
-import { BsSearch } from "react-icons/bs";
-import { IoMdContact, IoMdContacts } from "react-icons/io";
 import { AiFillHeart, AiFillStar } from "react-icons/ai";
 import { BiStation, BiUser } from "react-icons/bi";
+import {
+  BsFillEnvelopeFill,
+  BsPeopleFill,
+  BsSearch,
+  BsThreeDots,
+} from "react-icons/bs";
+import { IoMdContact } from "react-icons/io";
 import { MdAudiotrack } from "react-icons/md";
+import { RiNotification4Fill, RiSoundcloudLine } from "react-icons/ri";
 import { TbArrowRampRight } from "react-icons/tb";
-import { audio } from "../Audios";
-import { soundCloudData } from "../SoundCloudSongs";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { MyContext } from "../../MyContext";
-import NavMenu from "./LongMenu";
+import { soundCloudData } from "../SoundCloudSongs";
 import LongMenu from "./LongMenu";
+import "./Nav.css";
 const Options = () => {
   const { hover, setHover, setActive } = useContext(MyContext);
   return (
@@ -84,18 +83,6 @@ const ThreeDot = () => {
   return (
     <>
       <ul className="sound_cloud-nav_three_dot_ul">
-        {/* <li>About us</li>
-        <li>Legal</li>
-        <li>copyRight</li>
-        <li>Mobile Apps</li>
-        <li>For Creators</li>
-        <li>Blog</li>
-        <li>Jobs</li>
-        <li>Developers</li>
-        <li>Support</li>
-        <li>KeyboardshortCuts</li>
-        <li>Subscription</li>
-        <li>Setting</li> */}
         {login ? (
           <li onClick={handleSignOut}>Sign Out</li>
         ) : (
@@ -108,7 +95,6 @@ const ThreeDot = () => {
 const Nav = () => {
   const [option, setOption] = useState(false);
   const [threeDot, setThreeDot] = useState(false);
-  // const [] = useState();
   const [notification, setNotification] = useState(false);
   const [message, setMessage] = useState(false);
   const notificationRef = useRef();
@@ -126,7 +112,7 @@ const Nav = () => {
     setCreateAccount,
   } = useContext(MyContext);
   const navigate = useNavigate();
-  const handleSearch = async () => {
+  const handleSearch = () => {
     if (!search) {
       return;
     }
@@ -134,18 +120,15 @@ const Nav = () => {
     const filteredItems = soundCloudData.filter((item) =>
       item.title.toLowerCase().includes(search.toLowerCase())
     );
-    console.log(filteredItems);
     setSearchedItems(filteredItems);
     navigate("/search");
   };
   useEffect(() => {
     const handleOutSideClick = (e) => {
       if (optionsRef && !optionsRef.current?.contains(e.target)) {
-        // if (option)
         setOption(false);
       }
       if (threeDotRef && !threeDotRef.current.contains(e.target)) {
-        // if (threeDot)
         setThreeDot(false);
       }
       if (notificationRef && !notificationRef.current?.contains(e.target))
@@ -153,7 +136,6 @@ const Nav = () => {
       if (messageRef && !messageRef.current?.contains(e.target))
         setMessage(false);
     };
-    // document.addEventListener('click')
     document.addEventListener("click", handleOutSideClick);
     return () => {
       document.removeEventListener("click", handleOutSideClick);

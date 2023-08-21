@@ -1,33 +1,25 @@
-import React, { useContext, useRef } from "react";
-import "./SingleSong.css";
-import bg from "../Images/bg1.jpg";
-import { audio } from "../Audios";
-import Track from "../Track/Track";
-import { MyContext } from "../../MyContext";
-import { BiRepost } from "react-icons/bi";
+import React, { useContext, useEffect, useRef } from "react";
+import { AiFillHeart } from "react-icons/ai";
+import { BsFillPauseCircleFill, BsFillPlayCircleFill } from "react-icons/bs";
 import { FaShareSquare } from "react-icons/fa";
 import { LuLink2, LuRepeat2 } from "react-icons/lu";
-import MoreHorizRoundedIcon from "@mui/icons-material/MoreHorizRounded";
-import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
-import { BsFillPauseCircleFill, BsFillPlayCircleFill } from "react-icons/bs";
-import { AiFillHeart } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import { MyContext } from "../../MyContext";
+import bg from "../Images/bg1.jpg";
+import "./SingleSong.css";
 
 const SingleSong = () => {
+  const { id } = useParams();
   const { userPhoto } = useContext(MyContext);
   const {
     played,
-    setPlayed,
     currentSongDetail,
     setCurrentSongDetail,
-    currentSongIndex,
-    setCurrentSongIndex,
-    allSongs,
     isPlaying,
     setSongPlay,
     setIsPlaying,
-    songId,
     setSongId,
     audioRef,
     duration,
@@ -46,13 +38,39 @@ const SingleSong = () => {
     const progress = offSet / width;
     audioRef.current.currentTime = progress * duration;
   };
+  useEffect(() => {
+    const fetchData = async () => {
+      const projectId = "yji0muf36wd4";
+
+      try {
+        const response = await fetch(
+          `https://academics.newtonschool.co/api/v1/music/song/${id}`,
+          {
+            method: "GET",
+            headers: {
+              projectId: projectId,
+            },
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setCurrentSongDetail(data.data);
+        console.log(data);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+    fetchData();
+  }, []);
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
   const handleShare = () => {
-    // Implement the sharing functionality here
     if (navigator.share) {
       navigator
         .share({
@@ -89,7 +107,6 @@ const SingleSong = () => {
         <div className="sound_cloud-single_song_track">
           <div className="sound_sloud-single_song_left">
             <div className="sound_cloud-single_song_heading">
-              {/* <span> */}
               <span className="sound_cloud-card_play_icon">
                 {isPlaying ? (
                   <>
@@ -226,10 +243,6 @@ const SingleSong = () => {
             <LuLink2 style={{ fontSize: "1rem" }} />
             Copy More
           </button>
-          {/* <button title="More">
-            <MoreHorizRoundedIcon />
-            More
-          </button> */}
         </div>
       </div>
     </div>

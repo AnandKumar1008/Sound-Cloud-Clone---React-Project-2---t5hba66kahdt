@@ -1,10 +1,8 @@
-import * as React from "react";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import LinearScaleIcon from "@mui/icons-material/LinearScale";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import * as React from "react";
 import { Link } from "react-router-dom";
 const options = [
   { path: "", name: "All" },
@@ -14,8 +12,6 @@ const options = [
   { path: "albums", name: "Albums" },
   { path: "reposts", name: "Reposts" },
 ];
-
-const ITEM_HEIGHT = 48;
 
 const CategoryMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);

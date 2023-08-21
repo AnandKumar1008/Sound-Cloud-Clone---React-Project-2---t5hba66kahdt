@@ -1,13 +1,10 @@
-import * as React from "react";
+import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import MenuIcon from "@mui/icons-material/Menu";
-import { MyContext } from "../../MyContext";
+import * as React from "react";
 import { NavLink } from "react-router-dom";
-
-const ITEM_HEIGHT = 48;
+import { MyContext } from "../../MyContext";
 
 const LongMenu = () => {
   const { userPhoto, userName, login, setLogin, setLoginPage } =

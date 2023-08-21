@@ -4,7 +4,6 @@ import Badge from "@mui/material/Badge";
 import LoopIcon from "@mui/icons-material/Loop";
 import MailIcon from "@mui/icons-material/Mail";
 
-// export default function BadgeVisibility()
 const BadgeVisibility = () => {
   const [count, setCount] = React.useState(1);
   const [invisible, setInvisible] = React.useState(false);

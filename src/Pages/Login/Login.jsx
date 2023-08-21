@@ -1,15 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
-import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
-import GoogleIcon from "@mui/icons-material/Google";
-import "./Login.css";
-import AppleIcon from "@mui/icons-material/Apple";
-import { FcGoogle } from "react-icons/fc";
-import { MyContext } from "../../MyContext";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
-import { signInWithPopup } from "firebase/auth";
-import { auth, provider } from "../../firebase";
-import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { signInWithPopup } from "firebase/auth";
+import React, { useContext, useEffect, useState } from "react";
+import { FcGoogle } from "react-icons/fc";
+import { useLocation, useNavigate } from "react-router-dom";
+import { MyContext } from "../../MyContext";
+import { auth, provider } from "../../firebase";
+import "./Login.css";
 const Login = () => {
   const {
     loginPage,

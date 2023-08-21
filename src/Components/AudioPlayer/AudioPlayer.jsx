@@ -344,7 +344,6 @@ function AudioPlayer({ songs = [] }) {
   const dispatch = useDispatch();
   const [volume, setVolume] = useState(1);
   const [showList, setShowList] = useState(false);
-  // const likes = useSelector((state) => state.likes.likes);
   useEffect(() => {
     console.log(isPlaying);
     if (isPlaying) {
@@ -354,8 +353,7 @@ function AudioPlayer({ songs = [] }) {
     }
     const idx = songPlay.findIndex((item) => item._id === songId);
     if (idx != -1) setCurrentSongIndex(idx);
-    // console.log(currentSongIndex);
-    // setSongId(songs[currentSongIndex]._id);
+
     setCurrentSongDetail(songs[currentSongIndex]);
   }, [songId, isPlaying]);
 
@@ -376,7 +374,7 @@ function AudioPlayer({ songs = [] }) {
 
   const nextSongHandler = () => {
     setCurrentSongIndex((prevIndex) => (prevIndex + 1) % songs.length);
-    setPlayed(0); // Reset played progress for the new song
+    setPlayed(0);
     setIsPlaying(true);
   };
 
@@ -384,7 +382,7 @@ function AudioPlayer({ songs = [] }) {
     setCurrentSongIndex((prevIndex) =>
       prevIndex === 0 ? songs.length - 1 : prevIndex - 1
     );
-    setPlayed(0); // Reset played progress for the new song
+    setPlayed(0);
     setIsPlaying(true);
   };
   const formatTime = (time) => {
@@ -400,13 +398,6 @@ function AudioPlayer({ songs = [] }) {
     setPlayed(currentTime / duration);
   };
 
-  const progressBarClickHandler = (e) => {
-    const progressBar = e.target;
-    const clickedTime =
-      (e.clientX - progressBar.getBoundingClientRect().left) /
-      progressBar.clientWidth;
-    audioRef.current.currentTime = clickedTime * audioRef.current.duration;
-  };
   const hanldeDataLoad = () => {
     setDuration(audioRef.current.duration);
     setSongId(songs[currentSongIndex]._id);
@@ -432,9 +423,7 @@ function AudioPlayer({ songs = [] }) {
 
     nextSongHandler();
   };
-  const handleSongClick = () => {
-    // setSongPlay(audio);
-  };
+
   const handleVolumeChange = (event) => {
     const newVolume = parseFloat(event.target.value);
     audioRef.current.volume = newVolume;
@@ -505,7 +494,6 @@ function AudioPlayer({ songs = [] }) {
           </div>
           <span>{formatTime(duration)}</span>
         </div>
-        {/* <span>{Math.ceil(audioRef?.current?.currentTime * 100) / 100}</span> */}
         <button
           className="sound_cloud-audio_player_speaker"
           style={{ cursor: "pointer" }}
@@ -527,8 +515,6 @@ function AudioPlayer({ songs = [] }) {
             <FiVolumeX style={{ fontSize: "1.2rem" }} />
           )}
           <div className="sound_cloud-audio_player_speaker_hover">
-            {/* <div style={{ backgroundColor: "black" }}></div>
-            <div style={{ backgroundColor: "orangered" }}></div> */}
             <input
               type="range"
               min="0"
@@ -553,7 +539,7 @@ function AudioPlayer({ songs = [] }) {
             >
               {songs[currentSongIndex]?.mood}
             </p>
-            <p onClick={() => navigate("/track")}>
+            <p onClick={() => navigate(`/${songs[currentSongIndex]._id}`)}>
               {songs[currentSongIndex]?.title}
             </p>
           </div>

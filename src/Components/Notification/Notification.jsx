@@ -1,7 +1,6 @@
 import React from "react";
-import "./Notification.css";
-import { BiMessageDetail } from "react-icons/bi";
 import { IoMdNotificationsOutline } from "react-icons/io";
+import "./Notification.css";
 const Notification = () => {
   return (
     <div className="sound_cloud-notification">

@@ -55,11 +55,8 @@ const CreateAccount = () => {
       const responseData = await response.json();
       console.log(responseData);
       setCreateAccount(false);
-
-      // Handle the response data here
     } catch (error) {
       console.error("Error:", error);
-      // Handle errors here
     }
   };
   const handleClick = () => {
@@ -92,8 +89,7 @@ const CreateAccount = () => {
         );
         console.log(result);
         setLogin(true);
-        // setLogin(true);
-        // setShowForm("none");
+
         setUserPhoto(result.user.photoURL);
         setLoginPage(false);
         navigate("/home");
@@ -114,12 +110,6 @@ const CreateAccount = () => {
           />
         </div>
         <div className="sound_cloud-login_container_content">
-          {/* <button className="sound_cloud-login_button_facebook">
-            <span>
-              <FacebookRoundedIcon />
-            </span>
-            <span>Continue With Facebook</span>
-          </button> */}
           <button
             className="sound_cloud-login_button_google"
             onClick={handleGoogle}
@@ -129,12 +119,7 @@ const CreateAccount = () => {
             </span>{" "}
             <span>Continue with Google</span>
           </button>
-          {/* <button className="sound_cloud-login_button_apple">
-            <span>
-              <AppleIcon />{" "}
-            </span>{" "}
-            <span>Continue With Apple</span>
-          </button> */}
+
           <div className="sound_cloud-login_middle_div">
             <span></span>
             <span>or</span>

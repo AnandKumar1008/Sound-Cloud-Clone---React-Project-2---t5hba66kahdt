@@ -1,19 +1,16 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import "./Card.css";
-import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
-import PlayCircleFilledRoundedIcon from "@mui/icons-material/PlayCircleFilledRounded";
 import MoreHorizRoundedIcon from "@mui/icons-material/MoreHorizRounded";
-import { useDispatch, useSelector } from "react-redux";
+import { BiRepost, BiSolidPlaylist } from "react-icons/bi";
+import { BsFillPauseCircleFill, BsFillPlayCircleFill } from "react-icons/bs";
 import { FaShareSquare } from "react-icons/fa";
 import { LuLink2 } from "react-icons/lu";
-import { BiRepost, BiSolidPlaylist } from "react-icons/bi";
 import { MdReportGmailerrorred } from "react-icons/md";
-import { MyContext } from "../../MyContext";
-import PauseCircleFilledIcon from "@mui/icons-material/PauseCircleFilled";
-import { BsFillPauseCircleFill, BsFillPlayCircleFill } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { MyContext } from "../../MyContext";
+import "./Card.css";
 const Card = ({ item }) => {
   const {
     setSongPlay,
@@ -39,19 +36,11 @@ const Card = ({ item }) => {
   };
   useEffect(() => {
     const handleOutSideClick = (event) => {
-      // if (!toggle) return;
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setToggle(false);
       }
     };
     const handleScroll = () => {
-      // if (menuRef.current) {
-      //   const buttonPosition = menuRef.current.getBoundingClientRect();
-      //   setPosition({
-      //     x: buttonPosition.left,
-      //     y: buttonPosition.bottom + window.scrollY, // Adjust as needed based on your layout
-      //   });
-      // }
       setToggle(false);
     };
 
@@ -103,7 +92,6 @@ const Card = ({ item }) => {
                       border: "none",
                     }}
                     onClick={() => {
-                      // setSongId(item._id);
                       setIsPlaying(false);
                     }}
                   />{" "}

@@ -70,6 +70,7 @@ const App = () => {
       <div className="sound_cloud-routes">
         <Routes>
           <Route path="/" element={<Sound />} />
+          <Route path="/:id" element={<SingleSong />} />
           <Route path="/home" element={<Home />} />
           <Route path="/feed" element={<Feed />} />
           <Route path="/library" element={<Library />}>

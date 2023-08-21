@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { BsGooglePlay } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
 import { ImAppleinc } from "react-icons/im";
@@ -9,9 +9,8 @@ import { MyContext } from "../../MyContext";
 import { audio } from "../Audios";
 import Card from "../Card/Card";
 import cutPhone from "../Images/cutPhone.png";
-import head from "../Images/mike.jpg";
-import front from "../Images/sound1.jpg";
 import lady from "../Images/lady.png";
+import front from "../Images/sound1.jpg";
 import { soundCloudData } from "../SoundCloudSongs";
 import "./Sound.css";
 
@@ -39,9 +38,7 @@ export const Footer = () => {
     </div>
   );
 };
-let brr = [];
 const Sound = () => {
-  const [search, setSearch] = useState("");
   const {
     setLoginPage,
     setSongPlay,
@@ -51,9 +48,10 @@ const Sound = () => {
     songId,
     setAllSongs,
     setCreateAccount,
+    search,
+    setSearch,
   } = useContext(MyContext);
   const navigate = useNavigate();
-  const [allData, setAllData] = useState([]);
   const handleClick = async (mood, item) => {
     if (songId === item._id) {
       return;
@@ -67,9 +65,9 @@ const Sound = () => {
             projectId: "yji0muf36wd4",
           },
           params: {
-            filter: JSON.stringify({ mood }), // Filtering example
-            sort: JSON.stringify({ release: 1 }), // Sorting example
-            page: 2, // Pagination example
+            filter: JSON.stringify({ mood }),
+            sort: JSON.stringify({ release: 1 }),
+            page: 2,
             limit: 10,
           },
         }
