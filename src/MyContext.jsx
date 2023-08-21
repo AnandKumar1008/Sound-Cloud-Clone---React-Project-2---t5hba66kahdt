@@ -68,8 +68,6 @@ const MyProvider = ({ children }) => {
         setCurrentDuration,
         createAccount,
         setCreateAccount,
-        search,
-        setSearch,
       }}
     >
       {children}

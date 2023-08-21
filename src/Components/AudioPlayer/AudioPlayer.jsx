@@ -320,10 +320,8 @@ function AudioPlayer({ songs = [] }) {
     setSongId,
     played,
     setPlayed,
-    currentSongDetail,
     setCurrentSongDetail,
-    setSongPlay,
-    allSong,
+
     songPlay,
     duration,
     setDuration,
@@ -334,9 +332,7 @@ function AudioPlayer({ songs = [] }) {
   const [repeat, setRepeat] = useState(false);
   const [shuffle, setShuffle] = useState(false);
   const navigate = useNavigate();
-  // const [currentSongIndex, setCurrentSongIndex] = useState(songIndex);
-  // const [isPlaying, setIsPlaying] = useState(true);
-  // const [played, setPlayed] = useState(0);
+
   const likes = useSelector((state) => state.likes.likes);
 
   // const [duration, setDuration] = useState(0);
@@ -539,7 +535,7 @@ function AudioPlayer({ songs = [] }) {
             >
               {songs[currentSongIndex]?.mood}
             </p>
-            <p onClick={() => navigate(`/${songs[currentSongIndex]._id}`)}>
+            <p onClick={() => navigate(`/song/${songs[currentSongIndex]._id}`)}>
               {songs[currentSongIndex]?.title}
             </p>
           </div>
