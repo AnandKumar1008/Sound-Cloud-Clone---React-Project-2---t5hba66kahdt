@@ -245,16 +245,17 @@ const Track = ({ song, index, self }) => {
           <span className="sound_cloud-track_song_heading" style={{}}>
             <h6
               style={{
-                backgroundColor: `rgb(${Math.floor(
-                  Math.random() * 256
-                )},${Math.floor(Math.random() * 256)},${Math.floor(
-                  Math.random() * 256
-                )})`,
+                backgroundColor:
+                  songId === song?._id
+                    ? `rgb(${Math.floor(Math.random() * 256)},${Math.floor(
+                        Math.random() * 256
+                      )},${Math.floor(Math.random() * 256)})`
+                    : "white",
                 borderRadius: "1rem",
                 padding: "0.5rem",
                 maxWidth: "6rem",
                 textAlign: "center",
-                color: "white",
+                color: "black",
               }}
             >
               {song?.mood}

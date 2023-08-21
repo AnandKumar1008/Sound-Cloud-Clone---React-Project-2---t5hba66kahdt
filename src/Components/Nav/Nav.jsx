@@ -9,7 +9,7 @@ import { CgProfile } from "react-icons/cg";
 import { BsSearch } from "react-icons/bs";
 import { IoMdContact, IoMdContacts } from "react-icons/io";
 import { AiFillHeart, AiFillStar } from "react-icons/ai";
-import { BiStation } from "react-icons/bi";
+import { BiStation, BiUser } from "react-icons/bi";
 import { MdAudiotrack } from "react-icons/md";
 import { TbArrowRampRight } from "react-icons/tb";
 import { audio } from "../Audios";
@@ -249,9 +249,15 @@ const Nav = () => {
                   className="sound_cloud-nav_links_first_list"
                   ref={optionsRef}
                 >
-                  <div className="sound_cloud-nav_link_first_list_image">
-                    <img src={userPhoto} alt="" />
-                  </div>
+                  {userPhoto ? (
+                    <div className="sound_cloud-nav_link_first_list_image">
+                      <img src={userPhoto} alt="user" />
+                    </div>
+                  ) : (
+                    <>
+                      <BiUser />
+                    </>
+                  )}
 
                   <div className="sound_cloud-nav_links_option">
                     {option && <Options />}

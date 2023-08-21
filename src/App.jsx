@@ -31,6 +31,7 @@ import TryNextPro from "./Pages/TryNextPro/TryNextPro";
 import SearchResult from "./cover/SearchResult/SearchResult";
 import Notification from "./Components/Notification/Notification";
 import Messages from "./Components/Messages/Messages";
+// import jwt from "jsonwebtoken";
 
 const audiourl =
   "https://newton-project-resume-backend.s3.amazonaws.com/audio/64cf907d47ae38c3e33a189a.mp3";
@@ -49,14 +50,17 @@ const App = () => {
   useEffect(() => {
     const root = document.getElementById("root");
     const user = JSON.parse(localStorage.getItem("sound_cloud_google")) || "";
-    if (user.userPhoto) {
+    const token = JSON.parse(localStorage.getItem("sound_cloud_token")) || "";
+    if (user.userPhoto || token) {
       setLogin(true);
       setUserName(user.userName);
-      setUserPhoto(user.userPhoto);
+      setUserPhoto(user?.userPhoto);
       navigate("/home");
     }
     console.log(loginPage);
-
+    // const token = JSON.parse(localStorage.getItem("sound_cloud_token"));
+    // const decode = jwt.decode(token);
+    // console.log(decode);
     root.classList.add("light-theme");
   }, []);
   return (

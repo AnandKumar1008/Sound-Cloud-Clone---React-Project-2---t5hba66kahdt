@@ -89,9 +89,10 @@ const Login = () => {
   const handleLogin = async () => {
     const url = "https://academics.newtonschool.co/api/v1/user/login";
     const data = {
-      email: "user_email",
-      password: "user_password",
+      email: userDetail.email,
+      password: userDetail.password,
     };
+    console.log(userDetail);
 
     try {
       const response = await fetch(url, {
@@ -108,13 +109,17 @@ const Login = () => {
       if (response.ok) {
         const token = responseData.token;
         console.log("Token:", token);
+        localStorage.setItem("sound_cloud_token", JSON.stringify(token));
+
+        setUserName(responseData.data.name);
         setLogin(true);
         setLoginPage(false);
+        navigate("/home");
         // Save the token to a secure storage mechanism
       } else {
         console.error("Login was not successful:", responseData);
         // Handle unsuccessful login here
-        setError("Login was not successful! You can using Google");
+        setError("Login was not successful! Try using Google");
       }
     } catch (error) {
       console.error("Error:", error);
