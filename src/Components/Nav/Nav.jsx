@@ -77,6 +77,7 @@ const ThreeDot = () => {
     setUserPhoto("");
 
     localStorage.setItem("sound_cloud_google", JSON.stringify({}));
+    localStorage.setItem("sound_cloud_token", JSON.stringify(""));
     navigate("/");
   };
 

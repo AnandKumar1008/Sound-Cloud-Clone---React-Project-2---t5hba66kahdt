@@ -10,7 +10,7 @@ import { audio } from "../Audios";
 import Card from "../Card/Card";
 import cutPhone from "../Images/cutPhone.png";
 import head from "../Images/mike.jpg";
-// import head from "../Images/head.png";
+import front from "../Images/sound1.jpg";
 import lady from "../Images/lady.png";
 import { soundCloudData } from "../SoundCloudSongs";
 import "./Sound.css";
@@ -100,7 +100,7 @@ const Sound = () => {
       <div className="sound_cloud-sound_container">
         <main className="sound_cloud-sound_head">
           <div className="sound_cloud-sound_header_image">
-            <img src={head} alt="" />
+            <img src={front} alt="" />
             <div className="sound_cloud-sound_header_cover">
               <div className="sound_cloud-sound_create_account_cloud">
                 <div className="sound_cloud-sound_icon_left">
