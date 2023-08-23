@@ -56,7 +56,6 @@ const Sound = () => {
     if (songId === item._id) {
       return;
     }
-    console.log("hare krishan");
     try {
       const response = await axios.get(
         "https://academics.newtonschool.co/api/v1/music/song",

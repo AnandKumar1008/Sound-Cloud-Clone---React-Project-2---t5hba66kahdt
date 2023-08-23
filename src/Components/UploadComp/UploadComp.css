@@ -145,3 +145,13 @@
   gap: 1rem;
   font-family: var(--font-b);
 }
+@media screen and (max-width: 900px) {
+  .sound_cloud-upload_comp_cover {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .sound_cloud-upload_free_uploads {
+    width: 100%;
+  }
+}

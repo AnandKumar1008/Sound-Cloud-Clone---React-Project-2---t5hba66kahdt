@@ -94,7 +94,7 @@ const Card = ({ item }) => {
                     onClick={() => {
                       setIsPlaying(false);
                     }}
-                  />{" "}
+                  />
                 </>
               ) : (
                 <BsFillPlayCircleFill

@@ -17,6 +17,7 @@ const Login = () => {
     login,
     setLogin,
     setIsPlaying,
+    songPlay,
   } = useContext(MyContext);
   const [error, setError] = useState("");
   const location = useLocation();
@@ -25,7 +26,8 @@ const Login = () => {
   useEffect(() => {
     document.body.style.overflow = !loginPage ? "auto" : "hidden";
     if (loginPage) {
-      setSongPlay([]);
+      // setSongPlay([]);
+      setIsPlaying(false);
     }
   }, [loginPage]);
   const handleLoginPage = () => {
@@ -124,6 +126,7 @@ const Login = () => {
       setError("Something Went Wrong! Try login with google");
     }
   };
+
   return (
     <div className={`sound_cloud-login ${loginPage ? "login_page" : ""}`}>
       <div className="sound_cloud-login_container">

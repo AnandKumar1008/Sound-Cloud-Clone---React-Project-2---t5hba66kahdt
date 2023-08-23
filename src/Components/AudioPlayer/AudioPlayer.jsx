@@ -320,14 +320,15 @@ function AudioPlayer({ songs = [] }) {
     setSongId,
     played,
     setPlayed,
+    login,
     setCurrentSongDetail,
-
     songPlay,
     duration,
     setDuration,
     setActive,
     currentDuration,
     setCurrentDuration,
+    setLoginPage,
   } = useContext(MyContext);
   const [repeat, setRepeat] = useState(false);
   const [shuffle, setShuffle] = useState(false);
@@ -335,7 +336,6 @@ function AudioPlayer({ songs = [] }) {
 
   const likes = useSelector((state) => state.likes.likes);
 
-  // const [duration, setDuration] = useState(0);
   const clickRef = useRef();
   const dispatch = useDispatch();
   const [volume, setVolume] = useState(1);
@@ -542,7 +542,9 @@ function AudioPlayer({ songs = [] }) {
         </div>
         <div className="sound_cloud-audio_player_icons">
           <span>
-            {likes.some((item) => item._id === songs[currentSongIndex]._id) ? (
+            {likes.some(
+              (item) => item?._id === songs[currentSongIndex]?._id
+            ) ? (
               <AiFillHeart
                 style={{ color: "orangered", cursor: "pointer" }}
                 onClick={() =>
@@ -555,12 +557,16 @@ function AudioPlayer({ songs = [] }) {
             ) : (
               <AiFillHeart
                 style={{ cursor: "pointer" }}
-                onClick={() =>
+                onClick={() => {
+                  if (!login) {
+                    setLoginPage(true);
+                    return;
+                  }
                   dispatch({
                     type: "LIKE",
                     payload: songs[currentSongIndex],
-                  })
-                }
+                  });
+                }}
               />
             )}
           </span>

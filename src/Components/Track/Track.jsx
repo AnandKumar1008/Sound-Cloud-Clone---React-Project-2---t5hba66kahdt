@@ -181,7 +181,7 @@ const Track = ({ song, index, self }) => {
   };
   useEffect(() => {
     const handleOutSideClick = (e) => {
-      if (menuRef && !menuRef.current.contains(e.target)) setMore(false);
+      if (menuRef && !menuRef.current?.contains(e.target)) setMore(false);
     };
     window.addEventListener("click", handleOutSideClick);
     return () => {
