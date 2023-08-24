@@ -124,6 +124,9 @@
 .sound_cloud-nav_links_user_menu ul li {
   padding: 0 0.5rem;
 }
+.sound_cloud-nav_links_user_menu ul li:hover {
+  background-color: var(--color-bg);
+}
 .sound_cloud-nav_links_icons {
   flex: 3;
   display: flex;

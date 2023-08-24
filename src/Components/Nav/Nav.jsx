@@ -108,7 +108,6 @@ const Nav = () => {
     setSearch,
     userPhoto,
     login,
-    userName,
     setCreateAccount,
   } = useContext(MyContext);
   const navigate = useNavigate();
