@@ -525,7 +525,11 @@ function AudioPlayer({ songs = [] }) {
       </div>
       <div className="sound_cloud-audio_player_right">
         <div className="sound_cloud-audio_player_right_images">
-          <img src={songs[currentSongIndex]?.thumbnail} alt="" />
+          <img
+            src={songs[currentSongIndex]?.thumbnail}
+            alt=""
+            onClick={() => navigate(`/song/${songs[currentSongIndex]._id}`)}
+          />
           <div>
             <p
               onClick={() => {

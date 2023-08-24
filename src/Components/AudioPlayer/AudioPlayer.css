@@ -97,6 +97,13 @@
   white-space: nowrap;
   max-width: 8rem;
   overflow: hidden;
+  opacity: 0.8;
+}
+.sound_cloud-audio_player_right_images div p:nth-of-type(1):hover {
+  opacity: 1;
+}
+.sound_cloud-audio_player_right_images div p:nth-of-type(2):hover {
+  opacity: 1;
 }
 /* Current List */
 .sound_cloud-current_list_items {

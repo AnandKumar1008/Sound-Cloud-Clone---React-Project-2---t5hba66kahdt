@@ -233,7 +233,7 @@ const Nav = () => {
                 >
                   {userPhoto ? (
                     <div className="sound_cloud-nav_link_first_list_image">
-                      <img src={userPhoto} alt="user" />
+                      <img src={userPhoto} alt="" />
                     </div>
                   ) : (
                     <>

@@ -121,11 +121,12 @@ const UploadComp = () => {
         )}
         <div className="sound_cloud-sound_drag_go_to_track">
           {upload.map((item, i) => (
-            <div key={i}>
+            <div key={i} style={{ margin: "1rem 0" }}>
+              <audio src={item.audioUrl} controls autoPlay={false} />
               <p style={{ color: "skyblue", cursor: "pointer" }}>
                 {item.title}
               </p>
-              <p>{item.audioUrl}</p>
+              {/* <p>{item.audioUrl}</p> */}
               <p>Upload Complete</p>
               <h6 style={{ cursor: "pointer" }}> Go to Your Track</h6>
             </div>

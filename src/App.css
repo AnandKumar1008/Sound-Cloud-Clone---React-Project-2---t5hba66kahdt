@@ -11,6 +11,7 @@
   z-index: 200;
   width: 100%;
   background-color: var(--color-player-bg);
+  border-top: 1px solid var(--color-para-text);
   /* background-color: #e0e0e0; */
 }
 ul {
