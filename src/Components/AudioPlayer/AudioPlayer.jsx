@@ -329,6 +329,7 @@ function AudioPlayer({ songs = [] }) {
     currentDuration,
     setCurrentDuration,
     setLoginPage,
+    setSongPlay,
   } = useContext(MyContext);
   const [repeat, setRepeat] = useState(false);
   const [shuffle, setShuffle] = useState(false);

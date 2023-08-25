@@ -44,6 +44,7 @@ const App = () => {
     loginPage,
     setUserPhoto,
     createAccount,
+    setSongPlay,
   } = useContext(MyContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -58,15 +59,10 @@ const App = () => {
       navigate("/home");
     }
     console.log(loginPage);
-    if (token) {
-      const decode = jwt.decode(token);
-      console.log(decode);
-    }
-    // const token = JSON.parse(localStorage.getItem("sound_cloud_token"));
-    // const decode = jwt.decode(token);
-    // console.log(decode);
+
     root.classList.add("light-theme");
   }, []);
+
   return (
     <div className="sound_cloud-app">
       {location.pathname === "/" ? "" : <Nav />}

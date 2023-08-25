@@ -21,6 +21,8 @@ const Card = ({ item, self }) => {
     login,
     setLoginPage,
     songPlay,
+    albumId,
+    setAlbumId,
   } = useContext(MyContext);
   const liked = useSelector((state) => state.likes.likes);
   const dispatch = useDispatch();
@@ -80,7 +82,7 @@ const Card = ({ item, self }) => {
           <img src={item?.thumbnail || item?.image} alt="" />
           <div className="sound_cloud-card_absolute">
             <div className="sound_cloud-card_play_icon" onClick={() => {}}>
-              {songId === item?._id && isPlaying ? (
+              {(albumId == item._id || songId === item?._id) && isPlaying ? (
                 <>
                   <BsFillPauseCircleFill
                     style={{
@@ -107,7 +109,7 @@ const Card = ({ item, self }) => {
                     border: "none",
                   }}
                   onClick={() => {
-                    setSongPlay(self);
+                    setSongPlay([...self]);
                     setSongId(item._id);
                     setIsPlaying(true);
                   }}

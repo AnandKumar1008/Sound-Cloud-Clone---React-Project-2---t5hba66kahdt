@@ -9,7 +9,6 @@ import "../Track/TrackCard.css";
 const AlbumTrack = ({ album }) => {
   const {
     played,
-
     setCurrentSongIndex,
     isPlaying,
     setSongPlay,

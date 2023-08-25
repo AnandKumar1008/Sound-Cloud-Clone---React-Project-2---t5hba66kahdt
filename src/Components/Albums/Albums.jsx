@@ -6,6 +6,7 @@ import { MyContext } from "../../MyContext";
 import Card from "../Card/Card";
 import { Footer } from "../Sound/Sound";
 import "./Albums.css";
+import { Navigate, useNavigate } from "react-router-dom";
 const Albums = () => {
   const albums = useSelector((state) => state.albums.albums);
 
@@ -16,8 +17,7 @@ const Albums = () => {
     setSongPlay,
     setCurrentSongIndex,
   } = useContext(MyContext);
-
-  const apiCall = async () => {
+  const apiCall = async (id) => {
     const albumUrl = "https://academics.newtonschool.co/api/v1/music/album/";
 
     console.log(albumUrl);
@@ -27,7 +27,7 @@ const Albums = () => {
     };
 
     try {
-      const response = await axios.get(`${albumUrl}${albumId}`, {
+      const response = await axios.get(`${albumUrl}${id}`, {
         headers,
       });
       const data = response.data;
@@ -53,7 +53,7 @@ const Albums = () => {
                 key={item._id}
                 onClick={() => {
                   setAlbumId(item._id);
-                  apiCall();
+                  if (item._id != albumId) apiCall(item._id);
                 }}
               >
                 <Card item={item} self={self} />
