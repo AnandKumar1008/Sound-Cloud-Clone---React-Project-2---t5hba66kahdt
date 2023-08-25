@@ -31,10 +31,6 @@ import TryNextPro from "./Pages/TryNextPro/TryNextPro";
 import SearchResult from "./cover/SearchResult/SearchResult";
 import Notification from "./Components/Notification/Notification";
 import Messages from "./Components/Messages/Messages";
-// import jwt from "jsonwebtoken";
-
-const audiourl =
-  "https://newton-project-resume-backend.s3.amazonaws.com/audio/64cf907d47ae38c3e33a189a.mp3";
 
 const App = () => {
   const {
@@ -44,7 +40,6 @@ const App = () => {
     loginPage,
     setUserPhoto,
     createAccount,
-    setSongPlay,
   } = useContext(MyContext);
   const location = useLocation();
   const navigate = useNavigate();
