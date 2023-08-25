@@ -11,7 +11,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { MyContext } from "../../MyContext";
 import "./Card.css";
-const Card = ({ item }) => {
+const Card = ({ item, self }) => {
   const {
     setSongPlay,
     songId,
@@ -107,6 +107,7 @@ const Card = ({ item }) => {
                     border: "none",
                   }}
                   onClick={() => {
+                    setSongPlay(self);
                     setSongId(item._id);
                     setIsPlaying(true);
                   }}

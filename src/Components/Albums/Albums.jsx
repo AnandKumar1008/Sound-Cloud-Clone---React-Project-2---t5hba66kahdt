@@ -48,7 +48,7 @@ const Albums = () => {
       <div>
         {albums.length ? (
           <div className="sound_cloud-albums_grid">
-            {albums.map((item) => (
+            {albums.map((item, i, self) => (
               <div
                 key={item._id}
                 onClick={() => {
@@ -56,7 +56,7 @@ const Albums = () => {
                   apiCall();
                 }}
               >
-                <Card item={item} />
+                <Card item={item} self={self} />
               </div>
             ))}
           </div>

@@ -9,9 +9,9 @@ const MusicCaterogy = ({ title, description, list = [] }) => {
         <p>{description}</p>
       </div>
       <div className="sound_cloud-music_category_grid" key={title}>
-        {list.map((item, i) => (
+        {list.map((item, i, self) => (
           <div key={item._id}>
-            <Card key={item._id} item={item} />
+            <Card key={item._id} item={item} self={self} />
           </div>
         ))}
       </div>

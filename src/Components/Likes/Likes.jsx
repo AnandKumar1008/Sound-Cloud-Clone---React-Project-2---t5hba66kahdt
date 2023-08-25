@@ -10,8 +10,8 @@ const Likes = () => {
     <div>
       {liked.length ? (
         <div className="sound_cloud-likes_grid">
-          {liked.map((item) => (
-            <Card key={item._id} item={item} />
+          {liked.map((item, i, self) => (
+            <Card key={item._id} item={item} self={self} />
           ))}
         </div>
       ) : (
