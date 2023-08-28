@@ -56,7 +56,7 @@ const Albums = () => {
                   if (item._id != albumId) apiCall(item._id);
                 }}
               >
-                <Card item={item} self={self} />
+                <Card item={item} self={self} isAlbum={true} />
               </div>
             ))}
           </div>

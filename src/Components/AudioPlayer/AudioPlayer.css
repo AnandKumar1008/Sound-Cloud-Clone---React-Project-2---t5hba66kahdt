@@ -197,6 +197,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 0px 0.25rem 0.2rem rgba(0, 0, 0, 0.3);
 }
 .sound_cloud-current_list_dot button {
   border: none;
@@ -209,6 +210,8 @@
   align-items: center;
   justify-content: start;
   gap: 0.25rem;
+  color: var(--color-para-text);
+  font-family: var(--font-a);
   border: 1px solid var(--color-player-bg);
   cursor: pointer;
 }

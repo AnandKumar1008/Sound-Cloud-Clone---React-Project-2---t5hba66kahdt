@@ -84,6 +84,9 @@ const OneSong = ({ item, i }) => {
       document.removeEventListener("click", handleOutSideClick);
     };
   }, []);
+  const handleLeave = () => {
+    setDot(false);
+  };
   return (
     <div
       key={item._id}
@@ -93,6 +96,7 @@ const OneSong = ({ item, i }) => {
         setCurrentSongIndex(i), setIsPlaying(true);
         setSongId(item._id);
       }}
+      onMouseLeave={handleLeave}
     >
       <div className="sound_cloud-current_list_items_title">
         <div className="sound_cloud-current_list_images">
@@ -141,7 +145,7 @@ const OneSong = ({ item, i }) => {
         <span className="sound_cloud-current_list_hovering">
           {i <= currentSongIndex ? (
             <>
-              {liked.some((like) => like._id == item._id) ? (
+              {liked.some((like) => like._id == item?._id) ? (
                 <FavoriteIcon
                   style={{
                     cursor: "pointer",
@@ -185,12 +189,18 @@ const OneSong = ({ item, i }) => {
           <MoreHorizIcon style={{ fontSize: "1rem" }} />
           {dot && (
             <div className="sound_cloud-current_list_dot">
-              {liked.some((like) => like._id == songId) ? (
+              {liked.some((like) => like._id == item?._id) ? (
                 <button
                   onClick={() => dispatch({ type: "DISLIKE", payload: item })}
+                  style={{
+                    color: "orangered",
+                  }}
                 >
                   <FavoriteIcon
-                    style={{ color: "orangered", fontSize: "1rem" }}
+                    style={{
+                      color: "orangered",
+                      fontSize: "1rem",
+                    }}
                   />{" "}
                   Liked
                 </button>
@@ -199,7 +209,10 @@ const OneSong = ({ item, i }) => {
                   onClick={() => dispatch({ type: "LIKE", payload: item })}
                 >
                   {" "}
-                  <FavoriteIcon style={{ fontSize: "1rem" }} /> Like
+                  <FavoriteIcon
+                    style={{ fontSize: "1rem", color: "black" }}
+                  />{" "}
+                  Like
                 </button>
               )}
               {reposted.some((repost) => repost._id === item._id) ? (
@@ -230,14 +243,17 @@ const OneSong = ({ item, i }) => {
                     });
                   }}
                 >
-                  <BiRepost /> Repost
+                  <BiRepost style={{ fontSize: "1rem", color: "black" }} />{" "}
+                  Repost
                 </button>
               )}
               <button onClick={handleShare}>
-                <FaShareSquare /> Share
+                <FaShareSquare style={{ fontSize: "1rem", color: "black" }} />{" "}
+                Share
               </button>
               <button>
-                <BiSolidPlaylist /> Add To next Up
+                <BiSolidPlaylist style={{ fontSize: "1rem", color: "black" }} />{" "}
+                Add To next Up
               </button>
               <button
                 onClick={() => {
@@ -247,11 +263,14 @@ const OneSong = ({ item, i }) => {
                 }}
               >
                 {" "}
-                <Close style={{ fontSize: "1rem" }} />
+                <Close style={{ fontSize: "1rem", color: "black" }} />
                 Removefrom nextup
               </button>
               <button>
-                <MdReportGmailerrorred /> Report
+                <MdReportGmailerrorred
+                  style={{ fontSize: "1rem", color: "black" }}
+                />{" "}
+                Report
               </button>
             </div>
           )}
@@ -354,7 +373,8 @@ function AudioPlayer({ songs = [] }) {
   }, [songId, isPlaying]);
 
   useEffect(() => {
-    dispatch({ type: "ADD_PLAYLIST", payload: songs[currentSongIndex] });
+    if (songs[currentSongIndex] && songs[currentSongIndex].audio_url)
+      dispatch({ type: "ADD_PLAYLIST", payload: songs[currentSongIndex] });
   }, [songId]);
 
   const playPauseHandler = () => {

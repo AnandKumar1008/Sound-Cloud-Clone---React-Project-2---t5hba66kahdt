@@ -10,6 +10,7 @@ const playListReducer = (state = initialState, action) => {
       const newPlaylistItem = action.payload;
 
       // Check if the new playlists item's ID already exists in the playlists
+      if (!newPlaylistItem || !newPlaylistItem._id) return { ...state };
       const existingIndex = state.playlists.findIndex(
         (item) => item?._id === newPlaylistItem?._id
       );

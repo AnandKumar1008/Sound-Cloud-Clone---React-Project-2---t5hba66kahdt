@@ -11,7 +11,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { MyContext } from "../../MyContext";
 import "./Card.css";
-const Card = ({ item, self }) => {
+const Card = ({ item, self, isAlbum }) => {
   const {
     setSongPlay,
     songId,
@@ -74,14 +74,13 @@ const Card = ({ item, self }) => {
       console.log("Sharing not supported on this browser.");
     }
   };
-
   return (
     <div className="sound_cloud-card">
       <div className="sound_cloud-card_content">
         <div className="sound_cloud-card_image">
           <img src={item?.thumbnail || item?.image} alt="" />
           <div className="sound_cloud-card_absolute">
-            <div className="sound_cloud-card_play_icon" onClick={() => {}}>
+            <div className="sound_cloud-card_play_icon">
               {(albumId == item._id || songId === item?._id) && isPlaying ? (
                 <>
                   <BsFillPauseCircleFill
@@ -109,7 +108,8 @@ const Card = ({ item, self }) => {
                     border: "none",
                   }}
                   onClick={() => {
-                    setSongPlay([...self]);
+                    const data = self?.filter((item) => !!item?._id) || [];
+                    setSongPlay(data);
                     setSongId(item._id);
                     setIsPlaying(true);
                   }}
@@ -117,7 +117,7 @@ const Card = ({ item, self }) => {
               )}
             </div>
             <div className="sound_cloud-card_like_icons">
-              {liked.some((like) => like._id === item._id) ? (
+              {isAlbum ? (
                 <>
                   <FavoriteRoundedIcon
                     style={{
@@ -127,27 +127,50 @@ const Card = ({ item, self }) => {
                     }}
                     onClick={(e) => {
                       e.stopPropagation();
-                      dispatch({ type: "DISLIKE", payload: item });
+                      dispatch({ type: "REMOVE_ALBUM", payload: item });
                     }}
                   />
                 </>
               ) : (
-                <FavoriteRoundedIcon
-                  style={{
-                    color: "white",
-                    fontSize: "1rem",
-                    cursor: "pointer",
-                  }}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    if (!login) {
-                      setLoginPage(true);
-                      return;
-                    }
-                    dispatch({ type: "LIKE", payload: item });
-                  }}
-                />
+                <>
+                  {liked.some((like) => like._id === item._id) ? (
+                    <>
+                      {
+                        <>
+                          <FavoriteRoundedIcon
+                            style={{
+                              color: "orangered",
+                              fontSize: "1rem",
+                              cursor: "pointer",
+                            }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              dispatch({ type: "DISLIKE", payload: item });
+                            }}
+                          />
+                        </>
+                      }
+                    </>
+                  ) : (
+                    <FavoriteRoundedIcon
+                      style={{
+                        color: "white",
+                        fontSize: "1rem",
+                        cursor: "pointer",
+                      }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (!login) {
+                          setLoginPage(true);
+                          return;
+                        }
+                        dispatch({ type: "LIKE", payload: item });
+                      }}
+                    />
+                  )}
+                </>
               )}
+
               <div className="sound_cloud-card_three_dot">
                 <MoreHorizRoundedIcon
                   style={{
@@ -187,29 +210,33 @@ const Card = ({ item, self }) => {
               <BiRepost /> Reposted
             </button>
           ) : (
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                if (!login) {
-                  setLoginPage(true);
-                  return;
-                }
-                dispatch({ type: "REPOST", payload: item });
+            <>
+              {isAlbum || (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (!login) {
+                      setLoginPage(true);
+                      return;
+                    }
+                    dispatch({ type: "REPOST", payload: item });
 
-                toast(`${item?.title} 'reposted to your Feed`, {
-                  position: "top-right",
-                  autoClose: 2000,
-                  hideProgressBar: false,
-                  closeOnClick: true,
-                  pauseOnHover: true,
-                  draggable: true,
-                  progress: undefined,
-                  theme: "light",
-                });
-              }}
-            >
-              <BiRepost /> Repost
-            </button>
+                    toast(`${item?.title} 'reposted to your Feed`, {
+                      position: "top-right",
+                      autoClose: 2000,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                      theme: "light",
+                    });
+                  }}
+                >
+                  <BiRepost /> Repost
+                </button>
+              )}
+            </>
           )}
           <button onClick={handleShare}>
             <FaShareSquare /> Share
@@ -232,17 +259,18 @@ const Card = ({ item, self }) => {
             <LuLink2 /> Copy Link
           </button>
 
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              const idx = songPlay.findIndex((song) => song._id === item._id);
-              console.log(idx);
-              if (idx >= 0) return;
-              setSongPlay((p) => [item, ...p]);
-            }}
-          >
-            <BiSolidPlaylist /> Add To NextUp
-          </button>
+          {isAlbum || (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                const idx = songPlay.findIndex((song) => song._id === item._id);
+                if (idx >= 0) return;
+                setSongPlay((p) => [item, ...p]);
+              }}
+            >
+              <BiSolidPlaylist /> Add To NextUp
+            </button>
+          )}
           <button>
             <MdReportGmailerrorred /> Report
           </button>

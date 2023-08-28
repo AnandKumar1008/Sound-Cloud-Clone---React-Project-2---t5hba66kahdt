@@ -140,6 +140,19 @@ const Nav = () => {
       document.removeEventListener("click", handleOutSideClick);
     };
   }, []);
+  const handleKeyDown = (e) => {
+    if (e.key == "Enter") {
+      if (!search) {
+        return;
+      }
+
+      const filteredItems = soundCloudData.filter((item) =>
+        item.title.toLowerCase().includes(search.toLowerCase())
+      );
+      setSearchedItems(filteredItems);
+      navigate("/search");
+    }
+  };
   return (
     <div className="sound_cloud-nav">
       <nav className="sound_cloud-nav_links">
@@ -165,6 +178,7 @@ const Nav = () => {
               placeholder="Search"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
+              onKeyDown={handleKeyDown}
             />{" "}
             <button onClick={handleSearch}>
               <BsSearch />{" "}
