@@ -49,7 +49,7 @@ const App = () => {
     const token = JSON.parse(localStorage.getItem("sound_cloud_token")) || "";
     if (user.userPhoto || token) {
       setLogin(true);
-      setUserName(user.userName);
+      setUserName(user?.userName);
       setUserPhoto(user?.userPhoto);
       if (location.pathname === "/") navigate("/home");
     }

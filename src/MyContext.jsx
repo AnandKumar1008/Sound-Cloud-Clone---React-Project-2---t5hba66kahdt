@@ -17,7 +17,9 @@ const MyProvider = ({ children }) => {
   const [loginPage, setLoginPage] = useState(false);
   const [albumId, setAlbumId] = useState("");
   const [userName, setUserName] = useState("");
-  const [userPhoto, setUserPhoto] = useState("");
+  const [userPhoto, setUserPhoto] = useState(
+    JSON.parse(localStorage.getItem("sound_cloud_google"))?.userPhoto || ""
+  );
   const [login, setLogin] = useState(false);
   const [active, setActive] = useState("all");
   const [hover, setHover] = useState("overview");

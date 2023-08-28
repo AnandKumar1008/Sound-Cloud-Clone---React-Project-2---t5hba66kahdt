@@ -17,7 +17,6 @@ import "./SingleSong.css";
 
 const SingleSong = () => {
   const { id } = useParams();
-  const { userPhoto } = useContext(MyContext);
   const {
     played,
     currentSongDetail,
@@ -34,10 +33,10 @@ const SingleSong = () => {
     allComment,
     setAllComment,
     songId,
+    userPhoto,
   } = useContext(MyContext);
   const navigate = useNavigate();
-  // const location=useLocation();
-  // const [comment, setComment] = useState([]);
+
   const [inp, setInp] = useState("");
   const clickRef = useRef();
   const liked = useSelector((state) => state.likes.likes);
@@ -132,6 +131,16 @@ const SingleSong = () => {
           ...allComment[songId],
         ],
       });
+      localStorage.setItem(
+        "allComment",
+        JSON.stringify({
+          ...allComment,
+          [songId]: [
+            { time: formatTime(duration), img: userPhoto, text: inp },
+            ...allComment[songId],
+          ],
+        })
+      );
     }
   };
   return (

@@ -16,7 +16,6 @@ const Login = () => {
     login,
     setLogin,
     setIsPlaying,
-    songPlay,
   } = useContext(MyContext);
   const [error, setError] = useState("");
   const location = useLocation();
