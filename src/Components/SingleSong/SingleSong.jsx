@@ -1,10 +1,15 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { AiFillHeart } from "react-icons/ai";
 import { BsFillPauseCircleFill, BsFillPlayCircleFill } from "react-icons/bs";
 import { FaShareSquare } from "react-icons/fa";
 import { LuLink2, LuRepeat2 } from "react-icons/lu";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 import { toast } from "react-toastify";
 import { MyContext } from "../../MyContext";
 import bg from "../Images/bg1.jpg";
@@ -26,7 +31,14 @@ const SingleSong = () => {
     currentDuration,
     login,
     setLoginPage,
+    allComment,
+    setAllComment,
+    songId,
   } = useContext(MyContext);
+  const navigate = useNavigate();
+  // const location=useLocation();
+  // const [comment, setComment] = useState([]);
+  const [inp, setInp] = useState("");
   const clickRef = useRef();
   const liked = useSelector((state) => state.likes.likes);
   const repost = useSelector((state) => state.reposts.reposts);
@@ -39,12 +51,16 @@ const SingleSong = () => {
     audioRef.current.currentTime = progress * duration;
   };
   useEffect(() => {
+    if (!allComment[songId]) {
+      // const
+      setAllComment({ ...allComment, [songId]: [] });
+    }
     const fetchData = async () => {
       const projectId = "yji0muf36wd4";
 
       try {
         const response = await fetch(
-          `https://academics.newtonschool.co/api/v1/music/song/${id}`,
+          `https://academics.newtonschool.co/api/v1/music/song/${songId}`,
           {
             method: "GET",
             headers: {
@@ -63,8 +79,11 @@ const SingleSong = () => {
         console.error("Error:", error);
       }
     };
+    // Navigate()
+    if (!songId) setSongId(id);
+    navigate(`/song/${songId}`);
     fetchData();
-  }, []);
+  }, [songId]);
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
@@ -99,6 +118,21 @@ const SingleSong = () => {
         });
       })
       .catch((error) => console.error("Error copying:", error));
+  };
+  const handleKeyDown = (e) => {
+    if (e.key == "Enter") {
+      if (!inp) return;
+      setInp("");
+
+      setAllComment({
+        ...allComment,
+        [songId]: [
+          { time: formatTime(duration), img: userPhoto, text: inp },
+          ...allComment[songId],
+        ],
+      });
+      // console.log(allComment);
+    }
   };
   return (
     <div className="sound_cloud-single_song">
@@ -176,6 +210,7 @@ const SingleSong = () => {
           </div>
         </div>
       </div>
+
       <div className="sound_cloud-single_song_detail">
         <div className="sound_cloud-single_song_detail_img">
           {login && (
@@ -185,7 +220,17 @@ const SingleSong = () => {
               alt=""
             />
           )}
+          <div className="sound_cloud-single_song_comment">
+            <input
+              type="text"
+              placeholder="write a comment"
+              value={inp}
+              onChange={(e) => setInp(e.target.value)}
+              onKeyDown={handleKeyDown}
+            />
+          </div>
         </div>
+
         <div className="sound_cloud-single_song_like">
           {liked.some((like) => like._id === currentSongDetail._id) ? (
             <button
@@ -244,6 +289,36 @@ const SingleSong = () => {
             Copy More
           </button>
         </div>
+        <>
+          <p
+            style={{
+              fontSize: "0.8rem",
+              color: "var(--color-para-text)",
+              margin: "2rem ",
+            }}
+          >
+            {" "}
+            {allComment[songId]?.length} comments{" "}
+          </p>
+          {allComment[songId]?.map((item, i) => (
+            <div key={i} className="sound_cloud_single_song_comment">
+              <div className="sound_single_song_cloud-comment_img">
+                <img src={item?.img} alt="" />
+              </div>
+              <div>
+                <p
+                  style={{
+                    fontSize: "0.8rem",
+                    color: "var(--color-para-text)",
+                  }}
+                >
+                  You at {item?.time}{" "}
+                </p>
+                <p style={{ fontSize: "0.8rem" }}>{item.text}</p>
+              </div>
+            </div>
+          ))}
+        </>
       </div>
     </div>
   );

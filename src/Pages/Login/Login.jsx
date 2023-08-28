@@ -11,7 +11,6 @@ const Login = () => {
   const {
     loginPage,
     setLoginPage,
-    setSongPlay,
     setUserName,
     setUserPhoto,
     login,
@@ -72,19 +71,19 @@ const Login = () => {
           .catch((error) => {
             // console.error("Error posting data:", error);
           });
-        console.log(result);
+        // console.log(result);
         setLogin(true);
         // setLogin(true);
         // setShowForm("none");
         setUserPhoto(result.user.photoURL);
         setLoginPage(false);
         navigate("/home");
-        console.log("coming here");
       })
       .catch((error) => {
         console.log("Error", error);
       });
   };
+
   const handleLogin = async () => {
     const url = "https://academics.newtonschool.co/api/v1/user/login";
     const data = {

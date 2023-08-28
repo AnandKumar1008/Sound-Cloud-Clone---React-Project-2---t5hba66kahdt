@@ -22,6 +22,9 @@ const MyProvider = ({ children }) => {
   const [active, setActive] = useState("all");
   const [hover, setHover] = useState("overview");
   const [createAccount, setCreateAccount] = useState(false);
+  const [allComment, setAllComment] = useState(
+    JSON.parse(localStorage.getItem("allComment")) || {}
+  );
   // const [search, setSearch] = useState("");
   const [currentDuration, setCurrentDuration] = useState(0);
   return (
@@ -68,6 +71,8 @@ const MyProvider = ({ children }) => {
         setCurrentDuration,
         createAccount,
         setCreateAccount,
+        allComment,
+        setAllComment,
       }}
     >
       {children}

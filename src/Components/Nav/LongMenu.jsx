@@ -35,7 +35,6 @@ const LongMenu = () => {
       setLogin(false);
     }
     if (option.name === "Sign In" || option.name === "Create Account") {
-      // localStorage.setItem("sound_cloud_google", JSON.stringify({}));
       setLoginPage(true);
     }
   };

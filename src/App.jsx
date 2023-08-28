@@ -51,9 +51,8 @@ const App = () => {
       setLogin(true);
       setUserName(user.userName);
       setUserPhoto(user?.userPhoto);
-      navigate("/home");
+      if (location.pathname === "/") navigate("/home");
     }
-    console.log(loginPage);
 
     root.classList.add("light-theme");
   }, []);
