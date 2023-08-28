@@ -46,7 +46,6 @@ const SingleSong = () => {
   const handleCurrentDuration = (e) => {
     const width = clickRef.current.clientWidth;
     const offSet = e.nativeEvent.offsetX;
-    console.log(offSet, width);
     const progress = offSet / width;
     audioRef.current.currentTime = progress * duration;
   };
@@ -74,12 +73,10 @@ const SingleSong = () => {
         }
         const data = await response.json();
         setCurrentSongDetail(data.data);
-        console.log(data);
       } catch (error) {
         console.error("Error:", error);
       }
     };
-    // Navigate()
     if (!songId) setSongId(id);
     navigate(`/song/${songId}`);
     fetchData();
@@ -121,6 +118,10 @@ const SingleSong = () => {
   };
   const handleKeyDown = (e) => {
     if (e.key == "Enter") {
+      if (!login) {
+        setLoginPage(true);
+        return;
+      }
       if (!inp) return;
       setInp("");
 
@@ -131,7 +132,6 @@ const SingleSong = () => {
           ...allComment[songId],
         ],
       });
-      // console.log(allComment);
     }
   };
   return (

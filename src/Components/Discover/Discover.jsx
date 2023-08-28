@@ -50,8 +50,6 @@ const MusicList = ({ musicTitle, description, musicItem = [] }) => {
       setAllSongs(data.data.songs);
       setCurrentSongIndex(0);
       setIsPlaying(true);
-
-      console.log(data);
     } catch (error) {
       console.log(error);
     }

@@ -342,7 +342,6 @@ function AudioPlayer({ songs = [] }) {
   const [volume, setVolume] = useState(1);
   const [showList, setShowList] = useState(false);
   useEffect(() => {
-    console.log(isPlaying);
     if (isPlaying) {
       audioRef.current.play();
     } else {
