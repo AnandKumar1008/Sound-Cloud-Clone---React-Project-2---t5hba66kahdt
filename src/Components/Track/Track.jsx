@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { MyContext } from "../../MyContext";
 import "./Track.css";
 import "./TrackCard.css";
-
+import stringToColour from "./utils";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 export const More = ({ item }) => {
@@ -239,12 +239,7 @@ const Track = ({ song, index, self }) => {
           <span className="sound_cloud-track_song_heading" style={{}}>
             <h6
               style={{
-                backgroundColor:
-                  songId === song?._id
-                    ? `rgb(${Math.floor(Math.random() * 256)},${Math.floor(
-                        Math.random() * 256
-                      )},${Math.floor(Math.random() * 256)})`
-                    : "white",
+                backgroundColor: stringToColour(song?.mood),
                 borderRadius: "1rem",
                 padding: "0.5rem",
                 maxWidth: "6rem",
