@@ -47,7 +47,6 @@ const Card = ({ item, self, isAlbum }) => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     window.addEventListener("click", handleOutSideClick);
     return () => {
       window.removeEventListener("click", handleOutSideClick);
